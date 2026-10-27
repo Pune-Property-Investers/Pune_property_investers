@@ -3,5 +3,5 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/Pune_property_investers/',
+  base: process.env.GITHUB_ACTIONS ? '/Pune_property_investers/' : '/',
 })

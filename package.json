@@ -1,0 +1,10 @@
+{
+  "name": "pune-property-investors",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix Pune_Property_Investors_Frontend run dev",
+    "build": "npm --prefix Pune_Property_Investors_Frontend run build",
+    "preview": "npm --prefix Pune_Property_Investors_Frontend run preview"
+  }
+}
