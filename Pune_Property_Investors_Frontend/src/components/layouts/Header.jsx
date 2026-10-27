@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
 
 import logo from "../../assets/images/logo.jpg";
@@ -75,8 +76,8 @@ function Header() {
             <div className="header-container">
 
                 {/* Company Logo and Name */}
-                <a
-                    href="/"
+                <Link
+                    to="/"
                     className="header-brand"
                     aria-label="Pune Property Investor home"
                     onClick={closeMenu}
@@ -96,7 +97,7 @@ function Header() {
                             INVESTOR
                         </span>
                     </span>
-                </a>
+                </Link>
 
                 {/* Desktop and Mobile Navigation */}
                 <nav
@@ -113,8 +114,8 @@ function Header() {
                                 }`}
                         >
                             <div className="header-nav-item__main">
-                                <a
-                                    href={item.href}
+                                <Link
+                                    to={item.href}
                                     className={`header-nav-link ${item.label === "Home"
                                             ? "header-nav-link--home"
                                             : ""
@@ -122,7 +123,7 @@ function Header() {
                                     onClick={closeMenu}
                                 >
                                     {item.label}
-                                </a>
+                                </Link>
 
                                 {item.dropdown && (
                                     <button
@@ -144,14 +145,14 @@ function Header() {
                             {item.dropdown && (
                                 <div className="header-dropdown">
                                     {item.dropdown.map((subItem) => (
-                                        <a
+                                        <Link
                                             key={subItem.label}
-                                            href={subItem.href}
+                                            to={subItem.href}
                                             className="header-dropdown__link"
                                             onClick={closeMenu}
                                         >
                                             {subItem.label}
-                                        </a>
+                                        </Link>
                                     ))}
                                 </div>
                             )}
