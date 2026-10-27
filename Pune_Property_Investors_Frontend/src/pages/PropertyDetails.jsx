@@ -24,7 +24,7 @@ import PropertyAmenities from "../components/property-details/PropertyAmenities"
 import PropertyEnquiry from "../components/property-details/PropertyEnquiry";
 
 import AdvertisementSidebar from "../components/common/AdvertisementSidebar";
-import propertyListingsData from "../data/propertyListingsData..js";
+import propertyListingsData from "../data/propertyListingsData.js";
 
 import "./PropertyDetails.css";
 

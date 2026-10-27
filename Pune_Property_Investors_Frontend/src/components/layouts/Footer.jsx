@@ -30,9 +30,9 @@ const propertyLinks = [
     { label: "Plots & Land", path: "/plots" },
 ];
 
-function Footer() {
-    const currentYear = new Date().getFullYear();
+const currentYear = new Date().getFullYear();
 
+function Footer() {
     return (
         <footer className="site-footer">
             <div className="footer-main">

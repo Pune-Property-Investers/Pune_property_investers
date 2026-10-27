@@ -15,9 +15,11 @@ function PropertyGallery({ images = [], title = "Property" }) {
 
     const validImages = [...new Set(images.filter(Boolean))];
 
-    useEffect(() => {
+    const [prevImages, setPrevImages] = useState(images);
+    if (images !== prevImages) {
+        setPrevImages(images);
         setActiveIndex(0);
-    }, [images]);
+    }
 
     useEffect(() => {
         if (!lightboxOpen) return;

@@ -9,7 +9,7 @@ import PropertyFilters from "../components/properties/PropertyFilters";
 import PropertyListingCard from "../components/properties/PropertyListingCard";
 import AdvertisementSidebar from "../components/common/AdvertisementSidebar";
 
-import propertyListingsData from "../data/propertyListingsData..js";
+import propertyListingsData from "../data/propertyListingsData.js";
 
 import "./BuyProperties.css";
 
