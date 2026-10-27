@@ -1,0 +1,440 @@
+
+    /* ========================================
+       FOOTER — MAIN
+    ======================================== */
+
+.site-footer {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: #201923;
+    color: #f5f0ed;
+    font-family: "DM Sans", Arial, sans-serif;
+}
+
+.footer-main {
+    padding: 72px 0 58px;
+    background:
+            radial-gradient(
+                    circle at 12% 20%,
+                    rgba(197, 151, 86, 0.08),
+                    transparent 30%
+            ),
+            #201923;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: 1.5fr 0.9fr 1.15fr 1.2fr;
+    gap: 42px;
+    width: min(92%, 1400px);
+    margin: 0 auto;
+}
+
+/* ========================================
+   BRAND
+======================================== */
+
+.footer-company {
+    min-width: 0;
+}
+
+.footer-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 23px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.footer-brand__logo {
+    display: block;
+    width: 56px;
+    height: 56px;
+    flex-shrink: 0;
+    object-fit: contain;
+}
+
+.footer-brand__text {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    line-height: 1.1;
+}
+
+.footer-brand__name {
+    color: #ffffff;
+    font-size: 17px;
+    font-weight: 800;
+    letter-spacing: 0.4px;
+}
+
+.footer-brand__subtitle {
+    color: #d9b477;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 4px;
+}
+
+.footer-description {
+    max-width: 370px;
+    margin: 0 0 25px;
+    color: #c4bbc5;
+    font-size: 14px;
+    line-height: 1.9;
+    overflow-wrap: break-word;
+}
+
+/* ========================================
+   SOCIAL MEDIA — REACT ICONS
+======================================== */
+
+.footer-socials {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 11px;
+}
+
+.footer-socials a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.04);
+    color: #e2c18c;
+    font-size: 17px;
+    text-decoration: none;
+    transition:
+            background 0.25s ease,
+            color 0.25s ease,
+            border-color 0.25s ease,
+            transform 0.25s ease;
+}
+
+.footer-socials a:hover {
+    transform: translateY(-3px);
+    border-color: #d9b477;
+    background: #d9b477;
+    color: #201923;
+}
+
+.footer-socials a:focus-visible {
+    outline: 2px solid #d9b477;
+    outline-offset: 4px;
+}
+
+/* ========================================
+   FOOTER COLUMNS
+======================================== */
+
+.footer-column {
+    min-width: 0;
+}
+
+.footer-heading {
+    position: relative;
+    margin: 5px 0 27px;
+    padding-bottom: 14px;
+    color: #ffffff;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.footer-heading::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 42px;
+    height: 2px;
+    background: #d9b477;
+    content: "";
+}
+
+/* ========================================
+   FOOTER LINKS
+======================================== */
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.footer-links li {
+    margin: 0;
+    padding: 0;
+}
+
+.footer-links a {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 9px;
+    color: #c4bbc5;
+    font-size: 13px;
+    line-height: 1.7;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+    transition:
+            color 0.2s ease,
+            gap 0.2s ease;
+}
+
+.footer-links a svg {
+    flex-shrink: 0;
+    margin-top: 4px;
+    color: #d9b477;
+    font-size: 12px;
+}
+
+.footer-links a:hover {
+    gap: 12px;
+    color: #e4c58f;
+}
+
+.footer-links a:focus-visible,
+.footer-legal-links a:focus-visible {
+    outline: 2px solid #d9b477;
+    outline-offset: 4px;
+}
+
+/* ========================================
+   CONTACT INFORMATION
+======================================== */
+
+.footer-contact__intro {
+    margin: 0 0 22px;
+    color: #c4bbc5;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.footer-contact__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 18px;
+    color: #c4bbc5;
+    font-size: 13px;
+    line-height: 1.7;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+    transition: color 0.2s ease;
+}
+
+.footer-contact__item svg {
+    flex-shrink: 0;
+    margin-top: 4px;
+    color: #d9b477;
+    font-size: 17px;
+}
+
+.footer-contact__item:hover {
+    color: #e4c58f;
+}
+
+.footer-contact__item:focus-visible {
+    outline: 2px solid #d9b477;
+    outline-offset: 4px;
+}
+
+/* ========================================
+   BOTTOM BAR
+======================================== */
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    background: #19131c;
+}
+
+.footer-bottom__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    width: min(92%, 1400px);
+    min-height: 76px;
+    margin: 0 auto;
+    padding: 18px 0;
+}
+
+.footer-bottom__container p {
+    margin: 0;
+    color: #a99eaa;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.footer-legal-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 24px;
+}
+
+.footer-legal-links a {
+    color: #a99eaa;
+    font-size: 12px;
+    line-height: 1.8;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-legal-links a:hover {
+    color: #e4c58f;
+}
+
+/* ========================================
+   TABLET AND SMALL LAPTOPS
+======================================== */
+
+@media (max-width: 1100px) {
+    .footer-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 42px 50px;
+    }
+
+    .footer-description {
+        max-width: 440px;
+    }
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+    .footer-main {
+        padding: 48px 0 35px;
+    }
+
+    .footer-container {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 35px;
+        width: 90%;
+    }
+
+    .footer-brand {
+        gap: 10px;
+        margin-bottom: 18px;
+    }
+
+    .footer-brand__logo {
+        width: 48px;
+        height: 48px;
+    }
+
+    .footer-brand__name {
+        font-size: 15px;
+    }
+
+    .footer-brand__subtitle {
+        font-size: 10px;
+        letter-spacing: 3.5px;
+    }
+
+    .footer-description {
+        max-width: 100%;
+        font-size: 13px;
+        line-height: 1.8;
+    }
+
+    .footer-heading {
+        margin: 0 0 20px;
+        font-size: 16px;
+    }
+
+    .footer-links {
+        gap: 12px;
+    }
+
+    .footer-contact__intro {
+        margin-bottom: 18px;
+    }
+
+    .footer-contact__item {
+        margin-bottom: 15px;
+    }
+
+    .footer-bottom__container {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+        width: 90%;
+        padding: 20px 0;
+    }
+
+    .footer-bottom__container p {
+        font-size: 11px;
+    }
+
+    .footer-legal-links {
+        gap: 18px;
+    }
+
+    .footer-legal-links a {
+        font-size: 11px;
+    }
+}
+
+/* ========================================
+   SMALL MOBILE DEVICES
+======================================== */
+
+@media (max-width: 360px) {
+    .footer-brand__logo {
+        width: 42px;
+        height: 42px;
+    }
+
+    .footer-brand__name {
+        font-size: 13px;
+    }
+
+    .footer-brand__subtitle {
+        font-size: 9px;
+        letter-spacing: 3px;
+    }
+
+    .footer-socials {
+        gap: 9px;
+    }
+
+    .footer-socials a {
+        width: 36px;
+        height: 36px;
+        font-size: 15px;
+    }
+
+    .footer-legal-links {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+}
+
+/* ========================================
+   REDUCED MOTION ACCESSIBILITY
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .footer-socials a,
+    .footer-links a,
+    .footer-contact__item,
+    .footer-legal-links a {
+        transition: none;
+    }
+
+    .footer-socials a:hover {
+        transform: none;
+    }
+}
