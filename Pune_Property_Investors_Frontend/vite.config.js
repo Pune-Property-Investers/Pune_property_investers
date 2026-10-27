@@ -3,5 +3,5 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
 plugins: [react()],
-base: '/pune-property-investers/',
+base: '/Pune_property_innvesters/',
 })
