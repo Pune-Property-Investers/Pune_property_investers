@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
 
 import logo from "../../assets/images/logo.jpg";
@@ -58,6 +59,7 @@ const navigationItems = [
 function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
     const [openDropdown, setOpenDropdown] = useState(null);
+    const location = useLocation();
 
     const closeMenu = () => {
         setMenuOpen(false);
@@ -70,13 +72,20 @@ function Header() {
         );
     };
 
+    const isItemActive = (item) => {
+        if (item.href === "/" && location.pathname === "/") return true;
+        if (item.href !== "/" && location.pathname.startsWith(item.href)) return true;
+        if (item.dropdown && item.dropdown.some(sub => location.pathname === sub.href)) return true;
+        return false;
+    };
+
     return (
         <header className="site-header">
             <div className="header-container">
 
                 {/* Company Logo and Name */}
-                <a
-                    href="/"
+                <Link
+                    to="/"
                     className="header-brand"
                     aria-label="Pune Property Investor home"
                     onClick={closeMenu}
@@ -96,7 +105,7 @@ function Header() {
                             INVESTOR
                         </span>
                     </span>
-                </a>
+                </Link>
 
                 {/* Desktop and Mobile Navigation */}
                 <nav
@@ -113,16 +122,19 @@ function Header() {
                                 }`}
                         >
                             <div className="header-nav-item__main">
-                                <a
-                                    href={item.href}
-                                    className={`header-nav-link ${item.label === "Home"
+                                <Link
+                                    to={item.href}
+                                    className={`header-nav-link ${isItemActive(item)
+                                            ? "header-nav-link--active"
+                                            : ""
+                                        } ${item.label === "Home"
                                             ? "header-nav-link--home"
                                             : ""
                                         }`}
                                     onClick={closeMenu}
                                 >
                                     {item.label}
-                                </a>
+                                </Link>
 
                                 {item.dropdown && (
                                     <button
@@ -144,14 +156,14 @@ function Header() {
                             {item.dropdown && (
                                 <div className="header-dropdown">
                                     {item.dropdown.map((subItem) => (
-                                        <a
+                                        <Link
                                             key={subItem.label}
-                                            href={subItem.href}
+                                            to={subItem.href}
                                             className="header-dropdown__link"
                                             onClick={closeMenu}
                                         >
                                             {subItem.label}
-                                        </a>
+                                        </Link>
                                     ))}
                                 </div>
                             )}

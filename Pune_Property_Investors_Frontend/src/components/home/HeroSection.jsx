@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
     FaSearch,
     FaMapMarkerAlt,
@@ -71,6 +72,7 @@ const budgetOptions = [
 ];
 
 function HeroSection() {
+    const navigate = useNavigate();
     const [activeImage, setActiveImage] = useState(0);
     const [activeTab, setActiveTab] = useState("projects");
 
@@ -98,7 +100,7 @@ function HeroSection() {
             budget,
         });
 
-        window.location.href = `/search?${params.toString()}`;
+        navigate(`/buy?${params.toString()}`);
     };
 
     return (

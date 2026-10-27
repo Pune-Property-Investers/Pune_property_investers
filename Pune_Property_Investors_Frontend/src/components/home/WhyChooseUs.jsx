@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import {
     ShieldCheck,
     MapPin,
@@ -78,13 +79,13 @@ function WhyChooseUs() {
                         greater clarity and confidence.
                     </p>
 
-                    <a
-                        href="/contact"
+                    <Link
+                        to="/contact"
                         className="why-choose-us__cta"
                     >
                         Talk to Our Team
                         <ArrowUpRight size={19} aria-hidden="true" />
-                    </a>
+                    </Link>
 
                     <div className="why-choose-us__note">
                         <span className="why-choose-us__note-line"></span>

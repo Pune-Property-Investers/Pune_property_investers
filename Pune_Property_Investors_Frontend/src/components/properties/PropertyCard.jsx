@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import {
     Heart,
     MapPin,
@@ -95,13 +96,13 @@ function PropertyCard({ property }) {
                         For Sale
                     </span>
 
-                    <a
-                        href={`/property/${property.id}`}
+                    <Link
+                        to={`/property/${property.id}`}
                         className="property-card__details"
                     >
                         View Details
                         <ArrowUpRight size={16} />
-                    </a>
+                    </Link>
                 </div>
             </div>
         </article>

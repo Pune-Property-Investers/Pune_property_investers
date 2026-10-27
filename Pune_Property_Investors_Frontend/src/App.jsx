@@ -1,11 +1,13 @@
-import { HashRouter } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import AppRoutes from "./routes/AppRoutes";
+import ScrollToTop from "./components/common/ScrollToTop";
 
 function App() {
   return (
-    <HashRouter>
+    <BrowserRouter>
+      <ScrollToTop />
       <AppRoutes />
-    </HashRouter>
+    </BrowserRouter>
   );
 }
 
