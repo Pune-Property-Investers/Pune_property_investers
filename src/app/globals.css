@@ -1,0 +1,34 @@
+@import "tailwindcss";
+
+/* Design Tokens & Theme Variables */
+@import "../styles/variables.css";
+
+/* Core Global & Typography Styles */
+@import "../styles/global.css";
+@import "../styles/responsive.css";
+
+/* Layout Styles */
+@import "../components/layouts/Header.css";
+@import "../components/layouts/Footer.css";
+
+/* Page Styles */
+@import "../components/pages/Home.css";
+@import "../components/pages/BuyProperties.css";
+@import "../components/pages/PropertyDetails.css";
+
+/* Section & Component Styles */
+@import "../components/home/HeroSection.css";
+@import "../components/home/PropertySearch.css";
+@import "../components/home/FeaturedProperties.css";
+@import "../components/home/BrowseLocations.css";
+@import "../components/home/NewLaunchProjects.css";
+@import "../components/home/TrendingProjects.css";
+@import "../components/home/WhyChooseUs.css";
+@import "../components/properties/PropertyCard.css";
+@import "../components/properties/PropertyFilters.css";
+@import "../components/properties/PropertyListingCard.css";
+@import "../components/common/AdvertisementSidebar.css";
+@import "../components/property-details/PropertyOverview.css";
+@import "../components/property-details/PropertyGallery.css";
+@import "../components/property-details/PropertyAmenities.css";
+@import "../components/property-details/PropertyEnquiry.css";

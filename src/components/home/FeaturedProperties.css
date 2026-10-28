@@ -1,0 +1,325 @@
+
+    /* ========================================
+       FEATURED PROPERTIES
+    ======================================== */
+
+.featured-properties {
+    width: 100%;
+    padding: 5px 0 30px;
+    margin: 0;
+    background: #ffffff;
+}
+
+.featured-properties .container {
+    width: min(92%, 1400px);
+    margin: 0 auto;
+}
+
+/* ========================================
+   SECTION HEADING
+   Premium Typography Theme
+======================================== */
+
+.featured-properties__heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 20px;
+    margin: 0 0 18px;
+    padding: 0;
+}
+
+.featured-properties__heading .section-heading {
+    margin: 0;
+    padding: 0;
+}
+
+/* Eyebrow label */
+
+.featured-properties__eyebrow {
+    display: inline-block;
+    margin: 0 0 5px;
+    color: #ad7c48;
+    font-family: "DM Sans", Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.2px;
+}
+
+/* Main section heading */
+
+.featured-properties__heading .section-heading h2 {
+    margin: 0 0 7px;
+    color: #252b29;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(24px, 2.5vw, 34px);
+    font-weight: 500;
+    line-height: 1.25;
+    letter-spacing: -0.5px;
+}
+
+/* Section description */
+
+.featured-properties__heading .section-heading p {
+    max-width: 650px;
+    margin: 0;
+    color: #777e78;
+    font-family: "DM Sans", Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.65;
+}
+
+/* ========================================
+   VIEW ALL LINK
+======================================== */
+
+.featured-properties__view-all {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    flex-shrink: 0;
+    padding-bottom: 4px;
+    color: #ad7c48;
+    font-family: "DM Sans", Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: gap 0.2s ease, color 0.2s ease;
+}
+
+.featured-properties__view-all:hover {
+    gap: 11px;
+    color: #8f6539;
+}
+
+/* ========================================
+   PROPERTY GRID
+======================================== */
+
+.featured-properties__grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 22px;
+}
+
+.featured-properties__grid > * {
+    min-width: 0;
+}
+
+/* ========================================
+   PROPERTY CARD TYPOGRAPHY
+   Layout remains unchanged
+======================================== */
+
+.featured-properties .property-card h3,
+.featured-properties .property-card__title,
+.featured-properties .featured-property__title {
+    color: #252b29;
+    font-family: "Playfair Display", Georgia, serif;
+    font-weight: 600;
+}
+
+.featured-properties .property-card,
+.featured-properties .property-card p,
+.featured-properties .property-card span,
+.featured-properties .property-card a,
+.featured-properties .featured-property__details {
+    font-family: "DM Sans", Arial, sans-serif;
+}
+
+/* ========================================
+   EMPTY SEARCH RESULTS
+======================================== */
+
+.featured-properties__empty {
+    padding: 32px 20px;
+    border: 1px solid #e8e6e0;
+    border-radius: 12px;
+    background: #faf9f6;
+    text-align: center;
+}
+
+.featured-properties__empty h3 {
+    margin: 0 0 8px;
+    color: #252b29;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 21px;
+    font-weight: 600;
+}
+
+.featured-properties__empty p {
+    max-width: 520px;
+    margin: 0 auto 16px;
+    color: #777e78;
+    font-family: "DM Sans", Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.65;
+}
+
+.featured-properties__empty .primary-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 11px 18px;
+    border-radius: 7px;
+    background: var(--primary-color, #702c43);
+    color: #ffffff;
+    font-family: "DM Sans", Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+/* ========================================
+   MOBILE ACTION
+======================================== */
+
+.featured-properties__mobile-action {
+    display: none;
+}
+
+/* ========================================
+   LAPTOP
+======================================== */
+
+@media (max-width: 1200px) {
+    .featured-properties__grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 20px;
+    }
+}
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 900px) {
+    .featured-properties {
+        padding: 5px 0 28px;
+    }
+
+    .featured-properties__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+    }
+
+    .featured-properties__heading .section-heading p {
+        max-width: 520px;
+    }
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+    .featured-properties {
+        padding: 3px 0 24px;
+    }
+
+    .featured-properties .container {
+        width: 90%;
+    }
+
+    .featured-properties__heading {
+        align-items: flex-start;
+        gap: 12px;
+        margin-bottom: 16px;
+    }
+
+    .featured-properties__heading .section-heading h2 {
+        margin-bottom: 7px;
+        font-size: 24px;
+    }
+
+    .featured-properties__heading .section-heading p {
+        font-size: 13px;
+        line-height: 1.6;
+    }
+
+    .featured-properties__eyebrow {
+        margin-bottom: 4px;
+        font-size: 10px;
+        letter-spacing: 1.2px;
+    }
+
+    .featured-properties__view-all {
+        display: none;
+    }
+
+    .featured-properties__grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 18px;
+    }
+
+    .featured-properties__mobile-action {
+        display: flex;
+        justify-content: center;
+        margin-top: 18px;
+    }
+
+    .featured-properties__mobile-action .primary-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        width: 100%;
+        max-width: 300px;
+        min-height: 44px;
+        padding: 11px 18px;
+        border-radius: 7px;
+        font-family: "DM Sans", Arial, sans-serif;
+        font-size: 13px;
+        text-decoration: none;
+    }
+
+    .featured-properties__empty {
+        padding: 26px 15px;
+    }
+
+    .featured-properties__empty h3 {
+        font-size: 19px;
+    }
+
+    .featured-properties__empty p {
+        font-size: 13px;
+    }
+}
+
+/* ========================================
+   SMALL PHONES
+======================================== */
+
+@media (max-width: 360px) {
+    .featured-properties .container {
+        width: 92%;
+    }
+
+    .featured-properties__heading .section-heading h2 {
+        font-size: 21px;
+    }
+
+    .featured-properties__grid {
+        gap: 15px;
+    }
+}
+
+/* ========================================
+   ACCESSIBILITY
+======================================== */
+
+.featured-properties__view-all:focus-visible,
+.featured-properties__mobile-action a:focus-visible {
+    outline: 2px solid #ad7c48;
+    outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .featured-properties__view-all {
+        transition: none;
+    }
+}

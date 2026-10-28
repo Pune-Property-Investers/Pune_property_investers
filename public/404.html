@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pune Property Investor</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        background-color: #0b1528;
+        color: #ffffff;
+        text-align: center;
+      }
+      .loading-box {
+        padding: 2rem;
+      }
+      .spinner {
+        width: 40px;
+        height: 40px;
+        margin: 0 auto 1.5rem;
+        border: 3px solid rgba(255, 255, 255, 0.2);
+        border-top-color: #c59b4c;
+        border-radius: 50%;
+        animation: spin 0.8s linear infinite;
+      }
+      @keyframes spin {
+        to { transform: rotate(360deg); }
+      }
+      h2 {
+        font-size: 1.3rem;
+        margin-bottom: 0.5rem;
+        color: #f1d49e;
+      }
+      p {
+        color: #94a3b8;
+        font-size: 0.95rem;
+      }
+    </style>
+    <script>
+      (function () {
+        var l = window.location;
+        var pathname = l.pathname;
+        var repoName = "Pune_property_investers";
+        var repoPattern = new RegExp("/" + repoName + "(/|$)", "i");
+        var match = pathname.match(repoPattern);
+
+        var base = "";
+        var subpath = "";
+
+        if (match) {
+          var index = match.index;
+          base = pathname.substring(0, index + match[0].length);
+          if (!base.endsWith("/")) base += "/";
+          subpath = pathname.substring(index + match[0].length);
+        } else {
+          base = "/";
+          subpath = pathname.replace(/^\/+/, "");
+        }
+
+        if (subpath.charAt(0) !== "/") {
+          subpath = "/" + subpath;
+        }
+
+        var destination =
+          l.protocol +
+          "//" +
+          l.host +
+          base +
+          "#" +
+          subpath +
+          (l.search || "") +
+          (l.hash || "");
+
+        window.location.replace(destination);
+      })();
+    </script>
+  </head>
+  <body>
+    <div class="loading-box">
+      <div class="spinner"></div>
+      <h2>Pune Property Investor</h2>
+      <p>Loading requested page...</p>
+    </div>
+  </body>
+</html>

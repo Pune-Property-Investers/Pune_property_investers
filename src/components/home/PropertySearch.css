@@ -1,0 +1,355 @@
+
+    /* ========================================
+       PROPERTY SEARCH
+       Pune Property Investor
+       Premium Typography & Color Theme
+    ======================================== */
+
+.property-search {
+    --search-charcoal: #252b29;
+    --search-gold: #ad7c48;
+    --search-gold-light: #f8f3ec;
+    --search-border: #e8e6e0;
+    --search-muted: #777e78;
+
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    padding: 0 32px 24px;
+    border: 1px solid var(--search-border);
+    border-radius: 20px;
+    background: #ffffff;
+    box-shadow: 0 10px 35px rgba(37, 43, 41, 0.07);
+    color: var(--search-charcoal);
+    font-family: "DM Sans", Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+.property-search *,
+.property-search *::before,
+.property-search *::after {
+    box-sizing: border-box;
+}
+
+/* ========================================
+   TABS
+======================================== */
+
+.property-search__tabs {
+    display: flex;
+    align-items: center;
+    gap: 42px;
+    min-height: 66px;
+    border-bottom: 1px solid var(--search-border);
+}
+
+.property-search__tab {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    align-self: stretch;
+    padding: 0 10px;
+    border: none;
+    background: transparent;
+    color: var(--search-muted);
+    font-family: "DM Sans", Arial, sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.property-search__tab:hover,
+.property-search__tab--active {
+    color: var(--search-gold);
+}
+
+.property-search__tab--active::after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    border-radius: 3px 3px 0 0;
+    background: var(--search-gold);
+    content: "";
+}
+
+/* ========================================
+   SEARCH FORM
+======================================== */
+
+.property-search__form {
+    display: grid;
+    grid-template-columns:
+        minmax(170px, 1.3fr)
+        minmax(150px, 1fr)
+        minmax(120px, 0.85fr)
+        minmax(165px, 1fr)
+        153px;
+    align-items: end;
+    gap: 20px;
+    padding-top: 28px;
+}
+
+.property-search__field {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    gap: 12px;
+}
+
+.property-search__field label {
+    color: var(--search-charcoal);
+    font-family: "DM Sans", Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* ========================================
+   SELECT CONTROLS
+======================================== */
+
+.property-search__control {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+    min-width: 0;
+    border: 1px solid #e0ded7;
+    border-radius: 10px;
+    background: #ffffff;
+    transition:
+            border-color 0.2s ease,
+            box-shadow 0.2s ease;
+}
+
+.property-search__control:hover {
+    border-color: #c9b49a;
+}
+
+.property-search__control:focus-within {
+    border-color: var(--search-gold);
+    box-shadow: 0 0 0 3px rgba(173, 124, 72, 0.12);
+}
+
+.property-search__control select {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    padding: 0 36px 0 16px;
+    appearance: none;
+    -webkit-appearance: none;
+    border: none;
+    outline: none;
+    border-radius: inherit;
+    background: transparent;
+    color: #343a35;
+    font-family: "DM Sans", Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.property-search__location .property-search__control select {
+    padding-left: 48px;
+}
+
+.property-search__location-icon {
+    position: absolute;
+    left: 17px;
+    z-index: 1;
+    color: var(--search-gold);
+    font-size: 19px;
+    pointer-events: none;
+}
+
+.property-search__chevron {
+    position: absolute;
+    right: 15px;
+    color: var(--search-muted);
+    font-size: 12px;
+    pointer-events: none;
+}
+
+/* ========================================
+   SEARCH BUTTON
+======================================== */
+
+.property-search__submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    height: 60px;
+    padding: 0 18px;
+    border: 1px solid var(--search-charcoal);
+    border-radius: 10px;
+    background: var(--search-charcoal);
+    color: #ffffff;
+    font-family: "DM Sans", Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition:
+            background 0.2s ease,
+            border-color 0.2s ease,
+            transform 0.2s ease;
+}
+
+.property-search__submit svg {
+    flex-shrink: 0;
+    font-size: 19px;
+}
+
+.property-search__submit:hover {
+    transform: translateY(-1px);
+    border-color: var(--search-gold);
+    background: var(--search-gold);
+}
+
+.property-search__submit:focus-visible {
+    outline: 3px solid rgba(173, 124, 72, 0.35);
+    outline-offset: 3px;
+}
+
+/* ========================================
+   POPULAR SEARCHES
+======================================== */
+
+.property-search__popular {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 24px;
+}
+
+.property-search__popular-label {
+    margin-right: 5px;
+    color: var(--search-muted);
+    font-family: "DM Sans", Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.property-search__chip {
+    min-height: 39px;
+    padding: 0 16px;
+    border: 1px solid var(--search-border);
+    border-radius: 22px;
+    background: #ffffff;
+    color: #555e57;
+    font-family: "DM Sans", Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition:
+            border-color 0.2s ease,
+            background 0.2s ease,
+            color 0.2s ease;
+}
+
+.property-search__chip:hover,
+.property-search__chip--active {
+    border-color: var(--search-gold);
+    background: var(--search-gold-light);
+    color: #94683d;
+}
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 1100px) {
+    .property-search {
+        padding-right: 24px;
+        padding-left: 24px;
+    }
+
+    .property-search__form {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    .property-search__submit {
+        align-self: end;
+    }
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+    .property-search {
+        padding: 0 16px 20px;
+        border-radius: 14px;
+    }
+
+    .property-search__tabs {
+        gap: 24px;
+        min-height: 60px;
+    }
+
+    .property-search__tab {
+        padding: 0 4px;
+        font-size: 15px;
+    }
+
+    .property-search__form {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 17px;
+        padding-top: 22px;
+    }
+
+    .property-search__field {
+        gap: 8px;
+    }
+
+    .property-search__field label {
+        font-size: 13px;
+    }
+
+    .property-search__control,
+    .property-search__submit {
+        height: 54px;
+    }
+
+    .property-search__popular {
+        gap: 8px;
+        margin-top: 22px;
+    }
+
+    .property-search__popular-label {
+        width: 100%;
+        margin-bottom: 3px;
+        font-size: 13px;
+    }
+
+    .property-search__chip {
+        min-height: 35px;
+        padding: 0 12px;
+        font-size: 12px;
+    }
+}
+
+/* ========================================
+   ACCESSIBILITY: REDUCED MOTION
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .property-search__tab,
+    .property-search__control,
+    .property-search__submit,
+    .property-search__chip {
+        transition: none;
+    }
+
+    .property-search__submit:hover {
+        transform: none;
+    }
+}

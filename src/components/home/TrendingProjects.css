@@ -1,0 +1,564 @@
+
+    /* ========================================
+       TRENDING PROJECTS
+       Pune Property Investor
+    ======================================== */
+
+.trending-projects {
+    position: relative;
+    overflow: hidden;
+    padding: 100px 0;
+    background: #f8f7f3;
+    color: #252b29;
+    font-family: "DM Sans", Arial, sans-serif;
+}
+
+.trending-projects *,
+.trending-projects *::before,
+.trending-projects *::after {
+    box-sizing: border-box;
+}
+
+.trending-projects__container {
+    width: min(1320px, 90%);
+    margin: 0 auto;
+}
+
+/* ========================================
+   SECTION HEADER
+======================================== */
+
+.trending-projects__header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 32px;
+    margin-bottom: 46px;
+}
+
+.trending-projects__heading-content {
+    max-width: 760px;
+}
+
+.trending-projects__eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 0 0 22px;
+    color: #ad7c48;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    line-height: 1.5;
+    text-transform: uppercase;
+}
+
+.trending-projects__eyebrow span {
+    display: inline-block;
+    width: 35px;
+    height: 1px;
+    flex-shrink: 0;
+    background: #ad7c48;
+}
+
+.trending-projects__title {
+    margin: 0;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(42px, 5.2vw, 68px);
+    font-weight: 500;
+    line-height: 1.13;
+    letter-spacing: -2px;
+    color: #252b29;
+}
+
+.trending-projects__title span {
+    display: block;
+    color: #ad7c48;
+}
+
+.trending-projects__description {
+    max-width: 650px;
+    margin: 22px 0 0;
+    color: #737a75;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.9;
+}
+
+/* View All Link */
+
+.trending-projects__view-all {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    gap: 10px;
+    min-height: 48px;
+    padding: 0 20px;
+    border: 1px solid #d9d4ca;
+    border-radius: 6px;
+    color: #252b29;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition:
+            color 0.25s ease,
+            background 0.25s ease,
+            border-color 0.25s ease;
+}
+
+.trending-projects__view-all:hover {
+    border-color: #252b29;
+    background: #252b29;
+    color: #ffffff;
+}
+
+/* ========================================
+   PROJECT GRID
+======================================== */
+
+.trending-projects__grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+}
+
+/* ========================================
+   PROJECT CARD
+======================================== */
+
+.trending-card {
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid #eae7e0;
+    border-radius: 10px;
+    background: #ffffff;
+    box-shadow: 0 6px 25px rgba(37, 43, 41, 0.035);
+    transition:
+            transform 0.3s ease,
+            box-shadow 0.3s ease,
+            border-color 0.3s ease;
+}
+
+.trending-card:hover {
+    transform: translateY(-6px);
+    border-color: #d9c8b2;
+    box-shadow: 0 18px 40px rgba(37, 43, 41, 0.10);
+}
+
+/* Project Image */
+
+.trending-card__image-link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+
+.trending-card__image {
+    position: relative;
+    height: 235px;
+    overflow: hidden;
+    background: #e7e3dc;
+}
+
+.trending-card__image::after {
+    position: absolute;
+    inset: 45% 0 0;
+    background: linear-gradient(
+            to bottom,
+            transparent,
+            rgba(24, 28, 26, 0.35)
+    );
+    content: "";
+    pointer-events: none;
+}
+
+.trending-card__image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.65s ease;
+}
+
+.trending-card:hover .trending-card__image img {
+    transform: scale(1.06);
+}
+
+.trending-card__badge {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    min-height: 29px;
+    padding: 5px 11px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.94);
+    color: #76522f;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+}
+
+.trending-card__image-arrow {
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 39px;
+    height: 39px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.95);
+    color: #252b29;
+    transition:
+            background 0.25s ease,
+            color 0.25s ease;
+}
+
+.trending-card:hover .trending-card__image-arrow {
+    background: #ad7c48;
+    color: #ffffff;
+}
+
+/* ========================================
+   CARD CONTENT
+======================================== */
+
+.trending-card__content {
+    padding: 23px 20px 20px;
+}
+
+.trending-card__developer {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin: 0 0 12px;
+    color: #8b8f88;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+}
+
+.trending-card__developer svg {
+    flex-shrink: 0;
+    color: #ad7c48;
+}
+
+.trending-card__title {
+    margin: 0;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 23px;
+    font-weight: 600;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+}
+
+.trending-card__title a {
+    color: #252b29;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.trending-card__title a:hover {
+    color: #ad7c48;
+}
+
+.trending-card__location {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin: 12px 0 0;
+    color: #737a75;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.trending-card__location svg {
+    flex-shrink: 0;
+    color: #ad7c48;
+}
+
+.trending-card__divider {
+    width: 100%;
+    height: 1px;
+    margin: 20px 0 15px;
+    background: #eeece6;
+}
+
+.trending-card__configuration {
+    min-height: 22px;
+    margin: 0;
+    color: #555e57;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* ========================================
+   PRICE AND ACTION
+======================================== */
+
+.trending-card__footer {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 22px;
+}
+
+.trending-card__price {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    gap: 5px;
+}
+
+.trending-card__price span {
+    color: #858a83;
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.trending-card__price strong {
+    color: #252b29;
+    font-family: "DM Sans", Arial, sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+}
+
+.trending-card__action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 41px;
+    height: 41px;
+    border: 1px solid #e5dfd5;
+    border-radius: 50%;
+    background: #ffffff;
+    color: #252b29;
+    text-decoration: none;
+    transition:
+            background 0.25s ease,
+            border-color 0.25s ease,
+            color 0.25s ease;
+}
+
+.trending-card__action:hover {
+    border-color: #ad7c48;
+    background: #ad7c48;
+    color: #ffffff;
+}
+
+/* ========================================
+   BOTTOM LINK
+======================================== */
+
+.trending-projects__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin-top: 42px;
+    padding-top: 24px;
+    border-top: 1px solid #e4e0d8;
+}
+
+.trending-projects__bottom p {
+    margin: 0;
+    color: #737a75;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.trending-projects__bottom a {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+    gap: 9px;
+    color: #94683d;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.trending-projects__bottom a:hover {
+    color: #252b29;
+}
+
+/* ========================================
+   LARGE TABLET
+======================================== */
+
+@media (max-width: 1200px) {
+    .trending-projects {
+        padding: 85px 0;
+    }
+
+    .trending-projects__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px;
+    }
+
+    .trending-card__image {
+        height: 260px;
+    }
+}
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 768px) {
+    .trending-projects {
+        padding: 70px 0;
+    }
+
+    .trending-projects__container {
+        width: min(100% - 36px, 600px);
+    }
+
+    .trending-projects__header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 24px;
+        margin-bottom: 32px;
+    }
+
+    .trending-projects__title {
+        font-size: clamp(42px, 7vw, 56px);
+        letter-spacing: -1.5px;
+    }
+
+    .trending-projects__description {
+        margin-top: 18px;
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .trending-projects__grid {
+        gap: 18px;
+    }
+
+    .trending-card__image {
+        height: 220px;
+    }
+
+    .trending-card__content {
+        padding: 20px 17px 17px;
+    }
+
+    .trending-card__title {
+        font-size: 21px;
+    }
+
+    .trending-card__price strong {
+        font-size: 15px;
+    }
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 520px) {
+    .trending-projects {
+        padding: 55px 0;
+    }
+
+    .trending-projects__container {
+        width: calc(100% - 32px);
+    }
+
+    .trending-projects__eyebrow {
+        gap: 10px;
+        margin-bottom: 17px;
+        font-size: 10px;
+        letter-spacing: 2px;
+    }
+
+    .trending-projects__eyebrow span {
+        width: 25px;
+    }
+
+    .trending-projects__title {
+        font-size: clamp(37px, 10vw, 46px);
+        letter-spacing: -1px;
+        line-height: 1.15;
+    }
+
+    .trending-projects__description {
+        margin-top: 16px;
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    .trending-projects__view-all {
+        min-height: 44px;
+        padding: 0 15px;
+        font-size: 12px;
+    }
+
+    .trending-projects__grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 22px;
+    }
+
+    .trending-card__image {
+        height: 235px;
+    }
+
+    .trending-card__content {
+        padding: 21px 19px 19px;
+    }
+
+    .trending-card__title {
+        font-size: 24px;
+    }
+
+    .trending-card__price strong {
+        font-size: 17px;
+    }
+
+    .trending-projects__bottom {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 30px;
+    }
+}
+
+/* ========================================
+   REDUCED MOTION
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .trending-card,
+    .trending-card__image img,
+    .trending-card__image-arrow,
+    .trending-card__title a,
+    .trending-card__action,
+    .trending-projects__view-all,
+    .trending-projects__bottom a {
+        transition: none;
+    }
+
+    .trending-card:hover {
+        transform: none;
+    }
+
+    .trending-card:hover .trending-card__image img {
+        transform: none;
+    }
+}

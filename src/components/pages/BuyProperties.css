@@ -1,0 +1,642 @@
+/* =========================================
+   BUY PROPERTIES PAGE
+   Pune Property Investor
+========================================= */
+
+.buy-properties-page {
+    --buy-dark: #252b29;
+    --buy-gold: #ad7c48;
+    --buy-gold-light: #f7f0e7;
+    --buy-muted: #737873;
+    --buy-border: #e8e6e0;
+
+    min-height: 100vh;
+    background: #ffffff;
+    color: var(--buy-dark);
+}
+
+/* =========================================
+   HERO BANNER
+========================================= */
+
+.buy-properties-hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 330px;
+    padding: 65px 5%;
+    overflow: hidden;
+    isolation: isolate;
+    background: #252b29;
+    box-sizing: border-box;
+}
+
+.buy-properties-hero__background {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    background:
+            linear-gradient(
+                    90deg,
+                    rgba(24, 30, 27, 0.97) 0%,
+                    rgba(24, 30, 27, 0.88) 48%,
+                    rgba(24, 30, 27, 0.57) 100%
+            ),
+            url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2000&q=85")
+            center 52% / cover no-repeat;
+}
+
+.buy-properties-hero__content {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.buy-properties-hero__eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 20px;
+    color: #e0b77f;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.buy-properties-hero h1 {
+    max-width: 760px;
+    margin: 0;
+    color: #ffffff;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(34px, 4.2vw, 54px);
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.7px;
+}
+
+.buy-properties-hero h1 span {
+    color: #dfb77e;
+}
+
+.buy-properties-hero__content > p {
+    max-width: 600px;
+    margin: 20px 0 0;
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.buy-properties-hero__breadcrumb {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 24px;
+    color: #e1b77e;
+    font-size: 12px;
+}
+
+.buy-properties-hero__breadcrumb a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.buy-properties-hero__breadcrumb a:hover {
+    color: #e1b77e;
+}
+
+.buy-properties-hero__breadcrumb > span:nth-child(2) {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* =========================================
+   MAIN CONTENT
+========================================= */
+
+.buy-properties-content {
+    padding: 65px 0 85px;
+    background: #fbfaf8;
+}
+
+.buy-properties-container {
+    width: min(94%, 1500px);
+    margin: 0 auto;
+}
+
+/* =========================================
+   INTRO AND SEARCH
+========================================= */
+
+.buy-properties-intro {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 30px;
+    margin-bottom: 35px;
+}
+
+.buy-properties-intro__text {
+    flex: 1;
+    min-width: 0;
+}
+
+.buy-properties-section-label {
+    display: inline-block;
+    margin-bottom: 12px;
+    color: var(--buy-gold);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.buy-properties-intro__text h2 {
+    margin: 0;
+    color: var(--buy-dark);
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(25px, 3vw, 35px);
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.buy-properties-intro__text p {
+    margin: 12px 0 0;
+    color: var(--buy-muted);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.buy-properties-search {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    width: 340px;
+    min-height: 50px;
+    flex-shrink: 0;
+    padding: 0 15px;
+    box-sizing: border-box;
+    border: 1px solid var(--buy-border);
+    border-radius: 9px;
+    background: #ffffff;
+    color: var(--buy-gold);
+    transition:
+            border-color 0.2s ease,
+            box-shadow 0.2s ease;
+}
+
+.buy-properties-search:focus-within {
+    border-color: var(--buy-gold);
+    box-shadow: 0 0 0 3px rgba(173, 124, 72, 0.1);
+}
+
+.buy-properties-search > svg {
+    flex-shrink: 0;
+}
+
+.buy-properties-search input {
+    width: 100%;
+    min-width: 0;
+    padding: 12px 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: var(--buy-dark);
+    font: inherit;
+    font-size: 13px;
+}
+
+.buy-properties-search input::placeholder {
+    color: #989b96;
+}
+
+.buy-properties-search button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 27px;
+    height: 27px;
+    flex-shrink: 0;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: #f0eee9;
+    color: var(--buy-dark);
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* =========================================
+   THREE-COLUMN LAYOUT
+========================================= */
+
+.buy-properties-layout {
+    display: grid;
+    grid-template-columns:
+        minmax(220px, 260px)
+        minmax(0, 1fr)
+        minmax(220px, 280px);
+    align-items: start;
+    gap: 24px;
+}
+
+.buy-properties-filter-column,
+.buy-properties-results,
+.buy-properties-ad-column {
+    min-width: 0;
+}
+
+.buy-properties-filter-column {
+    position: sticky;
+    top: 20px;
+}
+
+/* =========================================
+   RESULTS HEADER
+========================================= */
+
+.buy-properties-results__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 22px;
+    padding: 18px;
+    border: 1px solid var(--buy-border);
+    border-radius: 12px;
+    background: #ffffff;
+}
+
+.buy-properties-results__header h2 {
+    margin: 0;
+    color: var(--buy-dark);
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.buy-properties-results__header p {
+    margin: 5px 0 0;
+    color: var(--buy-muted);
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.buy-properties-results__header p strong {
+    color: var(--buy-gold);
+}
+
+.buy-properties-clear-button {
+    flex-shrink: 0;
+    padding: 8px 11px;
+    border: 1px solid #e5d4c0;
+    border-radius: 7px;
+    background: #ffffff;
+    color: var(--buy-gold);
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+    transition:
+            color 0.2s ease,
+            background 0.2s ease,
+            border-color 0.2s ease;
+}
+
+.buy-properties-clear-button:hover {
+    border-color: var(--buy-gold);
+    background: var(--buy-gold-light);
+}
+
+/* =========================================
+   PROPERTY GRID
+========================================= */
+
+.buy-properties-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 22px;
+}
+
+/* =========================================
+   EMPTY SEARCH RESULTS
+========================================= */
+
+.buy-properties-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 55px 24px;
+    border: 1px solid var(--buy-border);
+    border-radius: 14px;
+    background: #ffffff;
+    text-align: center;
+}
+
+.buy-properties-empty__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 64px;
+    height: 64px;
+    margin-bottom: 20px;
+    border-radius: 50%;
+    background: var(--buy-gold-light);
+    color: var(--buy-gold);
+}
+
+.buy-properties-empty h3 {
+    margin: 0;
+    color: var(--buy-dark);
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.buy-properties-empty p {
+    max-width: 360px;
+    margin: 12px 0 23px;
+    color: var(--buy-muted);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.buy-properties-empty > button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 9px;
+    min-height: 44px;
+    padding: 0 18px;
+    border: none;
+    border-radius: 7px;
+    background: var(--buy-dark);
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.buy-properties-empty > button:hover {
+    background: var(--buy-gold);
+}
+
+/* =========================================
+   ENQUIRY BANNER
+========================================= */
+
+.buy-properties-enquiry {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    margin-top: 28px;
+    padding: 24px;
+    border: 1px solid #e8d9c5;
+    border-radius: 13px;
+    background:
+            linear-gradient(
+                    135deg,
+                    #fbf5ec 0%,
+                    #ffffff 100%
+            );
+}
+
+.buy-properties-enquiry > div > span {
+    display: block;
+    margin-bottom: 9px;
+    color: var(--buy-gold);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    line-height: 1.6;
+}
+
+.buy-properties-enquiry h3 {
+    margin: 0;
+    color: var(--buy-dark);
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 21px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.buy-properties-enquiry p {
+    margin: 10px 0 0;
+    color: var(--buy-muted);
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.buy-properties-enquiry__button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    min-height: 45px;
+    padding: 0 17px;
+    border-radius: 7px;
+    background: var(--buy-dark);
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    transition:
+            background 0.2s ease,
+            transform 0.2s ease;
+}
+
+.buy-properties-enquiry__button:hover {
+    background: var(--buy-gold);
+    transform: translateY(-2px);
+}
+
+/* =========================================
+   TABLET: HIDE RIGHT AD COLUMN
+========================================= */
+
+@media (max-width: 1200px) {
+    .buy-properties-layout {
+        grid-template-columns:
+            minmax(210px, 250px)
+            minmax(0, 1fr);
+        gap: 22px;
+    }
+
+    .buy-properties-ad-column {
+        display: none;
+    }
+
+    .buy-properties-container {
+        width: min(94%, 1100px);
+    }
+}
+
+/* =========================================
+   SMALL TABLET
+========================================= */
+
+@media (max-width: 900px) {
+    .buy-properties-hero {
+        min-height: 300px;
+        padding: 55px 4%;
+    }
+
+    .buy-properties-content {
+        padding: 48px 0 65px;
+    }
+
+    .buy-properties-intro {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 22px;
+    }
+
+    .buy-properties-search {
+        width: 100%;
+    }
+
+    .buy-properties-layout {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .buy-properties-filter-column {
+        position: static;
+    }
+
+    .buy-properties-results__header {
+        margin-top: 5px;
+    }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+    .buy-properties-hero {
+        min-height: 290px;
+        padding: 45px 5%;
+    }
+
+    .buy-properties-hero__eyebrow {
+        margin-bottom: 15px;
+        font-size: 10px;
+        letter-spacing: 1.5px;
+    }
+
+    .buy-properties-hero h1 {
+        font-size: clamp(30px, 8vw, 39px);
+        line-height: 1.22;
+    }
+
+    .buy-properties-hero__content > p {
+        margin-top: 15px;
+        font-size: 13px;
+        line-height: 1.8;
+    }
+
+    .buy-properties-hero__breadcrumb {
+        margin-top: 18px;
+    }
+
+    .buy-properties-container {
+        width: 92%;
+    }
+
+    .buy-properties-content {
+        padding: 38px 0 50px;
+    }
+
+    .buy-properties-intro {
+        margin-bottom: 25px;
+    }
+
+    .buy-properties-intro__text h2 {
+        font-size: 27px;
+    }
+
+    .buy-properties-intro__text p {
+        font-size: 13px;
+    }
+
+    .buy-properties-search {
+        min-height: 48px;
+    }
+
+    .buy-properties-results__header {
+        align-items: flex-start;
+        padding: 15px;
+    }
+
+    .buy-properties-results__header h2 {
+        font-size: 15px;
+    }
+
+    .buy-properties-clear-button {
+        padding: 7px 8px;
+        font-size: 10px;
+    }
+
+    .buy-properties-grid {
+        gap: 18px;
+    }
+
+    .buy-properties-empty {
+        padding: 40px 18px;
+    }
+
+    .buy-properties-empty h3 {
+        font-size: 18px;
+    }
+
+    .buy-properties-enquiry {
+        padding: 20px;
+    }
+
+    .buy-properties-enquiry h3 {
+        font-size: 20px;
+    }
+}
+
+/* =========================================
+   VERY SMALL SCREENS
+========================================= */
+
+@media (max-width: 360px) {
+    .buy-properties-container {
+        width: 94%;
+    }
+
+    .buy-properties-hero h1 {
+        font-size: 29px;
+    }
+
+    .buy-properties-results__header {
+        gap: 8px;
+        padding: 12px;
+    }
+
+    .buy-properties-clear-button {
+        font-size: 9px;
+    }
+
+    .buy-properties-enquiry__button {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .buy-properties-page *,
+    .buy-properties-page *::before,
+    .buy-properties-page *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+        animation: none !important;
+    }
+}
