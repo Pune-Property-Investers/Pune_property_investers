@@ -1,0 +1,93 @@
+/* ========================================
+   GLOBAL RESPONSIVE STYLES
+======================================== */
+
+/* Prevent horizontal overflow */
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+    overflow-x: clip;
+}
+
+/* Make common elements adapt to their containers */
+.container {
+    width: min(92%, var(--container-width));
+    margin-inline: auto;
+}
+
+/* Responsive media */
+img,
+video,
+svg {
+    max-width: 100%;
+}
+
+/* Prevent long text from breaking layouts */
+h1,
+h2,
+h3,
+h4,
+p,
+a,
+span {
+    overflow-wrap: break-word;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .container {
+        width: 94%;
+    }
+
+    .section {
+        padding-block: 52px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .container {
+        width: 92%;
+    }
+
+    .section {
+        padding-block: 40px;
+    }
+
+    .section-heading {
+        margin-bottom: 22px;
+    }
+
+    .section-heading h2 {
+        font-size: clamp(22px, 5vw, 28px);
+        line-height: 1.3;
+    }
+
+    .section-heading p {
+        font-size: 14px;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+        max-width: 100%;
+    }
+}
+
+/* Small mobile screens */
+@media (max-width: 480px) {
+    .container {
+        width: 90%;
+    }
+
+    .section {
+        padding-block: 32px;
+    }
+
+    .primary-button {
+        min-height: 44px;
+        padding: 10px 16px;
+    }
+}
