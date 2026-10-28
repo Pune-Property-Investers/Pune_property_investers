@@ -7,7 +7,7 @@
 .trending-projects {
     position: relative;
     overflow: hidden;
-    padding: 100px 0;
+    padding: 24px 0 32px;
     background: #f8f7f3;
     color: #252b29;
     font-family: "DM Sans", Arial, sans-serif;
@@ -20,7 +20,7 @@
 }
 
 .trending-projects__container {
-    width: min(1320px, 90%);
+    width: min(92%, 1400px);
     margin: 0 auto;
 }
 
@@ -33,7 +33,7 @@
     align-items: flex-end;
     justify-content: space-between;
     gap: 32px;
-    margin-bottom: 46px;
+    margin-bottom: 30px;
 }
 
 .trending-projects__heading-content {
@@ -44,7 +44,7 @@
     display: flex;
     align-items: center;
     gap: 14px;
-    margin: 0 0 22px;
+    margin: 0 0 16px;
     color: #ad7c48;
     font-size: 12px;
     font-weight: 700;
@@ -369,8 +369,8 @@
     align-items: center;
     justify-content: space-between;
     gap: 24px;
-    margin-top: 42px;
-    padding-top: 24px;
+    margin-top: 28px;
+    padding-top: 18px;
     border-top: 1px solid #e4e0d8;
 }
 
@@ -403,7 +403,7 @@
 
 @media (max-width: 1200px) {
     .trending-projects {
-        padding: 85px 0;
+        padding: 22px 0 28px;
     }
 
     .trending-projects__grid {
@@ -422,7 +422,7 @@
 
 @media (max-width: 768px) {
     .trending-projects {
-        padding: 70px 0;
+        padding: 20px 0 26px;
     }
 
     .trending-projects__container {
@@ -474,7 +474,7 @@
 
 @media (max-width: 520px) {
     .trending-projects {
-        padding: 55px 0;
+        padding: 18px 0 22px;
     }
 
     .trending-projects__container {

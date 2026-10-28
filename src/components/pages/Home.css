@@ -1,5 +1,16 @@
-.home-intro {
+.home-intro.section {
+    padding: 32px 0 24px;
     background: #ffffff;
+}
+
+.home-intro .section-heading {
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .home-intro.section {
+        padding: 24px 0 18px;
+    }
 }
 
 .home-placeholder {

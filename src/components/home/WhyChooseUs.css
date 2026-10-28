@@ -6,7 +6,7 @@
 
 .why-choose-us {
     position: relative;
-    padding: 100px 0;
+    padding: 40px 0 60px;
     overflow: hidden;
     background: #ffffff;
     color: #252b29;
@@ -212,7 +212,7 @@
 
 @media (max-width: 1050px) {
     .why-choose-us {
-        padding: 80px 0;
+        padding: 34px 0 46px;
     }
 
     .why-choose-us__container {
@@ -240,7 +240,7 @@
 
 @media (max-width: 600px) {
     .why-choose-us {
-        padding: 60px 0;
+        padding: 28px 0 36px;
     }
 
     .why-choose-us__container {

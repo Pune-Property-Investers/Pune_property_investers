@@ -146,7 +146,7 @@ function Footer() {
                         </p>
 
                         <a
-                            href="https://www.google.com/maps/search/?api=1&query=Pune+Maharashtra"
+                            href="https://maps.app.goo.gl/49jQdRiP4CCgNMCP7"
                             target="_blank"
                             rel="noreferrer"
                             className="footer-contact__item"
