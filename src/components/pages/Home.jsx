@@ -39,19 +39,6 @@ function Home() {
                         <TrendingProjects />
                         <PuneRealEstateContent />
 
-                        <section className="home-intro section">
-                            <div className="container">
-                                <div className="section-heading">
-                                    <h2>Find the Right Property in Pune</h2>
-
-                                    <p>
-                                        Discover residential properties, new
-                                        projects, and investment opportunities
-                                        across Pune.
-                                    </p>
-                                </div>
-                            </div>
-                        </section>
                     </div>
 
                     <aside className="home-page__sidebar">
