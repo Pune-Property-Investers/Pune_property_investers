@@ -8,6 +8,8 @@ const inter = Inter({
     variable: "--font-inter",
 });
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "/Pune_property_investers";
+
 export const viewport: Viewport = {
     width: "device-width",
     initialScale: 1,
@@ -36,8 +38,8 @@ export const metadata: Metadata = {
     creator: "Pune Property Investors",
     publisher: "Pune Property Investors",
     icons: {
-        icon: "/favicon.svg",
-        apple: "/favicon.svg",
+        icon: `${basePath}/favicon.svg`,
+        apple: `${basePath}/favicon.svg`,
     },
     openGraph: {
         type: "website",
@@ -84,7 +86,7 @@ export default function RootLayout({
     return (
         <html lang="en" className={inter.variable}>
             <head>
-                <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+                <link rel="icon" type="image/svg+xml" href={`${basePath}/favicon.svg`} />
             </head>
             <body>{children}</body>
         </html>

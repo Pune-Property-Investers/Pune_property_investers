@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, X, ChevronDown } from "lucide-react";
 
 const navigationItems = [
@@ -54,6 +55,8 @@ const navigationItems = [
     },
 ];
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "/Pune_property_investers";
+
 function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
     const [openDropdown, setOpenDropdown] = useState(null);
@@ -79,8 +82,8 @@ function Header() {
                     aria-label="Pune Property Investor home"
                     onClick={closeMenu}
                 >
-                    <img
-                        src="/images/logo.jpg"
+                    <Image
+                        src={`${basePath}/images/logo.jpg`}
                         alt="Pune Property Investor logo"
                         className="header-brand__image"
                         width={52}

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
     FaFacebookF,
     FaInstagram,
@@ -26,6 +27,8 @@ const propertyLinks = [
     { label: "Plots & Land", path: "/plots" },
 ];
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "/Pune_property_investers";
+
 function Footer() {
     const currentYear = new Date().getFullYear();
 
@@ -37,8 +40,8 @@ function Footer() {
                     {/* Company Information */}
                     <div className="footer-company">
                         <Link href="/" className="footer-brand">
-                            <img
-                                src="/images/logo.jpg"
+                            <Image
+                                src={`${basePath}/images/logo.jpg`}
                                 alt="Pune Property Investor logo"
                                 className="footer-brand__logo"
                                 width={52}
