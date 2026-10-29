@@ -45,6 +45,7 @@
 /* Badge */
 
 .property-card__badge {
+    font-family: var(--font-sans);
     position: absolute;
     top: 14px;
     left: 14px;
@@ -114,7 +115,8 @@
 }
 
 .property-card__price {
-    color: var(--secondary-color);
+    font-family: var(--font-serif);
+    color: var(--text-primary);
     font-size: 24px;
     font-weight: 800;
     line-height: 1.2;
@@ -133,6 +135,7 @@
 }
 
 .property-card__name {
+    font-family: var(--font-serif);
     margin-bottom: 8px;
     color: var(--text-primary);
     font-size: 16px;
@@ -146,6 +149,7 @@
 }
 
 .property-card__location {
+    font-family: var(--font-sans);
     display: flex;
     align-items: center;
     gap: 6px;
@@ -174,6 +178,7 @@
 }
 
 .property-card__spec {
+    font-family: var(--font-sans);
     display: flex;
     align-items: center;
     gap: 6px;

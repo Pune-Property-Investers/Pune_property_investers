@@ -70,6 +70,7 @@
 }
 
 .hero-eyebrow {
+    font-family: var(--font-sans);
     display: inline-block;
     margin-bottom: 10px;
     color: #f1d49e;
@@ -80,9 +81,10 @@
 }
 
 .hero-banner__content h1 {
+    font-family: var(--font-serif);
     max-width: 680px;
     margin: 0;
-    color: #ffffff;
+    color: var(--text-white, #ffffff);
     font-size: clamp(34px, 4.3vw, 56px);
     font-weight: 800;
     line-height: 1.12;
@@ -96,9 +98,10 @@
 }
 
 .hero-banner__content > p {
+    font-family: var(--font-sans);
     max-width: 620px;
     margin: 14px 0 0;
-    color: rgba(255, 255, 255, 0.94);
+    color: var(--text-white-muted, rgba(255, 255, 255, 0.94));
     font-size: 15px;
     line-height: 1.65;
 }
@@ -111,10 +114,11 @@
 }
 
 .hero-banner__highlights span {
+    font-family: var(--font-sans);
     display: inline-flex;
     align-items: center;
     gap: 7px;
-    color: #ffffff;
+    color: var(--text-white, #ffffff);
     font-size: 12px;
     line-height: 1.5;
 }
@@ -175,8 +179,8 @@
     padding: 9px 12px 8px;
     border: none;
     background: transparent;
-    color: #485875;
-    font-family: inherit;
+    color: var(--text-secondary, #334155);
+    font-family: var(--font-sans);
     font-size: 13px;
     font-weight: 600;
     white-space: nowrap;
@@ -189,7 +193,7 @@
 }
 
 .search-tab.active {
-    color: #142b50;
+    color: var(--text-primary, #0f172a);
 }
 
 .search-tab.active::after {
@@ -226,9 +230,10 @@
 }
 
 .search-field label {
+    font-family: var(--font-sans);
     display: block;
     margin-bottom: 3px;
-    color: #454545;
+    color: var(--text-primary, #0f172a);
     font-size: 11px;
     font-weight: 700;
     line-height: 1.4;
@@ -239,6 +244,7 @@
 ======================================== */
 
 .field-control {
+    font-family: var(--font-sans);
     position: relative;
     display: flex;
     align-items: center;
@@ -249,7 +255,7 @@
     border: 1px solid #dedede;
     border-radius: 8px;
     background: #ffffff;
-    color: #485875;
+    color: var(--text-primary, #0f172a);
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -273,13 +279,13 @@
     border: none;
     outline: none;
     background: transparent;
-    color: #333333;
-    font-family: inherit;
+    color: var(--text-primary, #0f172a);
+    font-family: var(--font-sans);
     font-size: 12px;
 }
 
 .field-control input::placeholder {
-    color: #888888;
+    color: var(--text-muted, #64748b);
 }
 
 .field-control select {
@@ -321,8 +327,8 @@
     border: none;
     border-radius: 8px;
     background: #0877d9;
-    color: #ffffff;
-    font-family: inherit;
+    color: var(--text-white, #ffffff);
+    font-family: var(--font-sans);
     font-size: 13px;
     font-weight: 700;
     white-space: nowrap;
@@ -348,13 +354,14 @@
 ======================================== */
 
 .search-footer {
+    font-family: var(--font-sans);
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     gap: 6px;
     margin-top: 7px;
     padding-bottom: 2px;
-    color: #69758b;
+    color: var(--text-muted, #64748b);
     font-size: 12px;
 }
 
@@ -368,8 +375,8 @@
     border: 1px solid #e3e8ef;
     border-radius: 22px;
     background: #ffffff;
-    color: #485875;
-    font-family: inherit;
+    color: var(--text-secondary, #334155);
+    font-family: var(--font-sans);
     font-size: 11px;
     cursor: pointer;
     transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;

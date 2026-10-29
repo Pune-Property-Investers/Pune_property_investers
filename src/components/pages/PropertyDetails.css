@@ -4,15 +4,15 @@
     ========================================= */
 
 .property-details {
-    --pd-green: #252b29;
+    --pd-green: var(--text-primary, #0f172a);
     --pd-gold: #ad7c48;
-    --pd-text: #303632;
-    --pd-muted: #737a75;
+    --pd-text: var(--text-secondary, #334155);
+    --pd-muted: var(--text-muted, #64748b);
     --pd-border: #e9e5df;
     --pd-background: #f8f8f5;
 
     min-height: 100vh;
-    padding: 32px 0 70px;
+    padding: 38px 0 70px;
     background: var(--pd-background);
     color: var(--pd-text);
 }

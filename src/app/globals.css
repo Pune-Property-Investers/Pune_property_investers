@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+@theme {
+    --font-serif: var(--font-serif), "Playfair Display", Georgia, serif;
+    --font-sans: var(--font-sans), "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
 /* Design Tokens & Theme Variables */
 @import "../styles/variables.css";
 
@@ -23,11 +28,15 @@
 @import "../components/home/BrowseLocations.css";
 @import "../components/home/NewLaunchProjects.css";
 @import "../components/home/TrendingProjects.css";
+@import "../components/home/PuneRealEstateContent.css";
+@import "../components/home/TrustStats.css";
+@import "../components/home/Testimonials.css";
 @import "../components/home/WhyChooseUs.css";
 @import "../components/properties/PropertyCard.css";
 @import "../components/properties/PropertyFilters.css";
 @import "../components/properties/PropertyListingCard.css";
 @import "../components/common/AdvertisementSidebar.css";
+@import "../components/property-details/PropertyHeroHead.css";
 @import "../components/property-details/PropertyOverview.css";
 @import "../components/property-details/PropertyGallery.css";
 @import "../components/property-details/PropertyAmenities.css";

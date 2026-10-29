@@ -6,11 +6,11 @@
     ======================================== */
 
 .property-search {
-    --search-charcoal: #252b29;
+    --search-charcoal: var(--text-primary, #0f172a);
     --search-gold: #ad7c48;
     --search-gold-light: #f8f3ec;
     --search-border: #e8e6e0;
-    --search-muted: #777e78;
+    --search-muted: var(--text-secondary, #334155);
 
     position: relative;
     z-index: 5;
@@ -21,7 +21,7 @@
     background: #ffffff;
     box-shadow: 0 10px 35px rgba(37, 43, 41, 0.07);
     color: var(--search-charcoal);
-    font-family: "DM Sans", Arial, sans-serif;
+    font-family: var(--font-sans);
     box-sizing: border-box;
 }
 
@@ -52,7 +52,7 @@
     border: none;
     background: transparent;
     color: var(--search-muted);
-    font-family: "DM Sans", Arial, sans-serif;
+    font-family: var(--font-sans);
     font-size: 17px;
     font-weight: 600;
     cursor: pointer;
@@ -101,7 +101,7 @@
 
 .property-search__field label {
     color: var(--search-charcoal);
-    font-family: "DM Sans", Arial, sans-serif;
+    font-family: var(--font-sans);
     font-size: 14px;
     font-weight: 600;
 }
@@ -147,7 +147,7 @@
     border-radius: inherit;
     background: transparent;
     color: #343a35;
-    font-family: "DM Sans", Arial, sans-serif;
+    font-family: var(--font-sans);
     font-size: 14px;
     font-weight: 400;
     cursor: pointer;
@@ -190,7 +190,7 @@
     border-radius: 10px;
     background: var(--search-charcoal);
     color: #ffffff;
-    font-family: "DM Sans", Arial, sans-serif;
+    font-family: var(--font-sans);
     font-size: 15px;
     font-weight: 700;
     cursor: pointer;
@@ -231,7 +231,7 @@
 .property-search__popular-label {
     margin-right: 5px;
     color: var(--search-muted);
-    font-family: "DM Sans", Arial, sans-serif;
+    font-family: var(--font-sans);
     font-size: 14px;
     font-weight: 500;
 }
@@ -243,7 +243,7 @@
     border-radius: 22px;
     background: #ffffff;
     color: #555e57;
-    font-family: "DM Sans", Arial, sans-serif;
+    font-family: var(--font-sans);
     font-size: 13px;
     font-weight: 500;
     cursor: pointer;

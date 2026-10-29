@@ -1,11 +1,17 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
     subsets: ["latin"],
     display: "swap",
-    variable: "--font-inter",
+    variable: "--font-sans",
+});
+
+const playfair = Playfair_Display({
+    subsets: ["latin"],
+    display: "swap",
+    variable: "--font-serif",
 });
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "/Pune_property_investers";
@@ -84,7 +90,7 @@ export default function RootLayout({
     children: React.ReactNode;
 }) {
     return (
-        <html lang="en" className={inter.variable}>
+        <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
             <head>
                 <link rel="icon" type="image/svg+xml" href={`${basePath}/favicon.svg`} />
             </head>
@@ -92,4 +98,3 @@ export default function RootLayout({
         </html>
     );
 }
-

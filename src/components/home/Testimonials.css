@@ -21,6 +21,7 @@
 }
 
 .testimonials__eyebrow {
+    font-family: var(--font-sans);
     display: inline-block;
     margin-bottom: 10px;
     color: #a9823d;
@@ -31,15 +32,15 @@
 
 .testimonials__heading h2 {
     margin: 0 0 12px;
-    color: #30243a;
-    font-family: "Playfair Display", Georgia, serif;
+    color: var(--text-primary);
+    font-family: var(--font-serif);
     font-size: clamp(30px, 4vw, 42px);
     line-height: 1.25;
 }
 
 .testimonials__heading p {
     margin: 0;
-    color: #746d79;
+    color: var(--text-secondary);
     font-size: 15px;
     line-height: 1.8;
 }
@@ -82,9 +83,10 @@
 
 /* TESTIMONIAL TEXT */
 .testimonial-card__text {
+    font-family: var(--font-sans);
     flex: 1;
     margin: 0 0 18px;
-    color: #746d79;
+    color: var(--text-secondary);
     font-size: 14px;
     line-height: 1.9;
     overflow-wrap: anywhere;
@@ -109,21 +111,23 @@
     color: #fff;
     background: #30243a;
     border-radius: 50%;
-    font-family: "Playfair Display", Georgia, serif;
+    font-family: var(--font-serif);
     font-size: 20px;
 }
 
 /* CUSTOMER NAME */
 .testimonial-card__author h3 {
+    font-family: var(--font-serif);
     margin: 0 0 5px;
-    color: #30243a;
+    color: var(--text-primary);
     font-size: 14px;
     font-weight: 700;
 }
 
 /* CUSTOMER ROLE AND LOCATION */
 .testimonial-card__author span {
-    color: #746d79;
+    font-family: var(--font-sans);
+    color: var(--text-muted);
     font-size: 12px;
 }
 

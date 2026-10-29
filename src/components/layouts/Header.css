@@ -76,7 +76,8 @@
 }
 
 .header-brand__name {
-    color: #ffffff;
+    font-family: var(--font-serif);
+    color: var(--text-white, #ffffff);
     font-size: clamp(15px, 1.35vw, 21px);
     font-weight: 800;
     letter-spacing: 0.4px;
@@ -84,6 +85,7 @@
 }
 
 .header-brand__subtitle {
+    font-family: var(--font-sans);
     margin-top: 5px;
     color: #f1d49e;
     font-size: 11px;
@@ -115,11 +117,12 @@
 }
 
 .header-nav-link {
+    font-family: var(--font-sans);
     display: inline-flex;
     align-items: center;
     padding: 12px 0;
 
-    color: #ffffff;
+    color: var(--text-white, #ffffff);
     font-size: 14px;
     font-weight: 700;
     white-space: nowrap;

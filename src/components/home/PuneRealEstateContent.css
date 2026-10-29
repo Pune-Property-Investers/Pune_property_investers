@@ -53,8 +53,8 @@
 
 .pune-real-estate-content__container h2 {
     margin: 0 0 20px;
-    color: #30243a;
-    font-family: "Playfair Display", Georgia, serif;
+    color: var(--text-primary);
+    font-family: var(--font-serif);
     font-size: 32px;
     font-weight: 700;
     line-height: 1.35;
@@ -71,8 +71,8 @@
 
 .pune-real-estate-content__container p {
     margin: 0 0 15px;
-    color: #625b66;
-    font-family: "DM Sans", Arial, sans-serif;
+    color: var(--text-secondary);
+    font-family: var(--font-sans);
     font-size: 15px;
     font-weight: 400;
     line-height: 1.85;
@@ -88,7 +88,7 @@
 ======================================== */
 
 .pune-real-estate-content__container strong {
-    color: #30243a;
+    color: var(--text-primary);
     font-weight: 700;
 }
 

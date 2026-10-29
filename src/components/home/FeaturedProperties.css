@@ -40,7 +40,7 @@
     display: inline-block;
     margin: 0 0 5px;
     color: #ad7c48;
-    font-family: "DM Sans", Arial, sans-serif;
+    font-family: var(--font-sans);
     font-size: 11px;
     font-weight: 700;
     letter-spacing: 2.2px;
@@ -50,8 +50,8 @@
 
 .featured-properties__heading .section-heading h2 {
     margin: 0 0 7px;
-    color: #252b29;
-    font-family: "Playfair Display", Georgia, serif;
+    color: var(--text-primary);
+    font-family: var(--font-serif);
     font-size: clamp(24px, 2.5vw, 34px);
     font-weight: 500;
     line-height: 1.25;
@@ -63,8 +63,8 @@
 .featured-properties__heading .section-heading p {
     max-width: 650px;
     margin: 0;
-    color: #777e78;
-    font-family: "DM Sans", Arial, sans-serif;
+    color: var(--text-secondary);
+    font-family: var(--font-sans);
     font-size: 14px;
     font-weight: 400;
     line-height: 1.65;
@@ -82,7 +82,7 @@
     flex-shrink: 0;
     padding-bottom: 4px;
     color: #ad7c48;
-    font-family: "DM Sans", Arial, sans-serif;
+    font-family: var(--font-sans);
     font-size: 13px;
     font-weight: 700;
     text-decoration: none;
@@ -117,8 +117,8 @@
 .featured-properties .property-card h3,
 .featured-properties .property-card__title,
 .featured-properties .featured-property__title {
-    color: #252b29;
-    font-family: "Playfair Display", Georgia, serif;
+    color: var(--text-primary);
+    font-family: var(--font-serif);
     font-weight: 600;
 }
 
@@ -127,7 +127,7 @@
 .featured-properties .property-card span,
 .featured-properties .property-card a,
 .featured-properties .featured-property__details {
-    font-family: "DM Sans", Arial, sans-serif;
+    font-family: var(--font-sans);
 }
 
 /* ========================================
@@ -144,8 +144,8 @@
 
 .featured-properties__empty h3 {
     margin: 0 0 8px;
-    color: #252b29;
-    font-family: "Playfair Display", Georgia, serif;
+    color: var(--text-primary);
+    font-family: var(--font-serif);
     font-size: 21px;
     font-weight: 600;
 }
@@ -153,8 +153,8 @@
 .featured-properties__empty p {
     max-width: 520px;
     margin: 0 auto 16px;
-    color: #777e78;
-    font-family: "DM Sans", Arial, sans-serif;
+    color: var(--text-secondary);
+    font-family: var(--font-sans);
     font-size: 14px;
     line-height: 1.65;
 }
@@ -168,7 +168,7 @@
     border-radius: 7px;
     background: var(--primary-color, #702c43);
     color: #ffffff;
-    font-family: "DM Sans", Arial, sans-serif;
+    font-family: var(--font-sans);
     font-size: 13px;
     font-weight: 700;
     text-decoration: none;
@@ -272,7 +272,7 @@
         min-height: 44px;
         padding: 11px 18px;
         border-radius: 7px;
-        font-family: "DM Sans", Arial, sans-serif;
+        font-family: var(--font-sans);
         font-size: 13px;
         text-decoration: none;
     }

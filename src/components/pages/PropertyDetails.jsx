@@ -21,12 +21,14 @@ import {
 import Header from "../layouts/Header";
 import Footer from "../layouts/Footer";
 
+import PropertyHeroHead from "../property-details/PropertyHeroHead";
 import PropertyGallery from "../property-details/PropertyGallery";
 import PropertyOverview from "../property-details/PropertyOverview";
 import PropertyAmenities from "../property-details/PropertyAmenities";
 import PropertyEnquiry from "../property-details/PropertyEnquiry";
 
 import AdvertisementSidebar from "../common/AdvertisementSidebar";
+import PageHeroBanner from "../common/PageHeroBanner";
 import propertyListingsData from "../../data/propertyListingsData.js";
 import trendingProjects from "../../data/trendingProjectsData.js";
 
@@ -93,6 +95,18 @@ function PropertyDetails({ propertyId, propertySlug }) {
             <>
                 <Header />
 
+                <PageHeroBanner
+                    title="Property"
+                    titleAccent="Not Found"
+                    eyebrow="PROPERTY ADVISORY"
+                    description="We couldn't find this property. It may have been sold, archived, or the link may be incorrect."
+                    breadcrumbs={[
+                        { label: "Home", href: "/" },
+                        { label: "Buy Properties", href: "/buy" },
+                        { label: "Not Found" },
+                    ]}
+                />
+
                 <main className="property-details__not-found">
                     <Home size={44} strokeWidth={1.5} />
 
@@ -112,7 +126,7 @@ function PropertyDetails({ propertyId, propertySlug }) {
                         className="property-details__back-button"
                     >
                         <ArrowLeft size={17} />
-                        Browse Properties
+                        Browse Verified Properties
                     </Link>
                 </main>
 
@@ -198,80 +212,22 @@ function PropertyDetails({ propertyId, propertySlug }) {
         <>
             <Header />
 
+            {/* Premium Full-Width Head Section for View Details */}
+            <PropertyHeroHead
+                property={property}
+                title={title}
+                price={price}
+                location={location}
+                configuration={configuration}
+                area={area}
+                whatsappMessage={whatsappMessage}
+                whatsappNumber={WHATSAPP_NUMBER}
+                advisorPhone={ADVISOR_PHONE}
+                backgroundImage={uniqueImages[0] || property.image}
+            />
+
             <main className="property-details">
                 <div className="property-details__container">
-                    {/* Breadcrumb */}
-                    <nav
-                        className="property-details__breadcrumb"
-                        aria-label="Breadcrumb"
-                    >
-                        <Link href="/">Home</Link>
-
-                        <ChevronRight size={14} />
-
-                        <Link href="/buy">Buy Properties</Link>
-
-                        <ChevronRight size={14} />
-
-                        <span aria-current="page">{title}</span>
-                    </nav>
-
-                    {/* Property heading and price */}
-                    <section className="property-details__project-header">
-                        <div className="property-details__project-info">
-                            <div className="property-details__badges">
-                                {property.verified && (
-                                    <span className="property-details__badge property-details__badge--verified">
-                                        <ShieldCheck size={14} />
-                                        Verified Listing
-                                    </span>
-                                )}
-
-                                {property.featured && (
-                                    <span className="property-details__badge property-details__badge--featured">
-                                        Featured Property
-                                    </span>
-                                )}
-                            </div>
-
-                            <h1>{title}</h1>
-
-                            <p className="property-details__location">
-                                <MapPin size={17} />
-                                <span>{location || "Pune, Maharashtra"}</span>
-                            </p>
-
-                            {property.projectName &&
-                                property.projectName !== title && (
-                                    <p className="property-details__project-name">
-                                        Project: {property.projectName}
-                                    </p>
-                                )}
-                        </div>
-
-                        <div className="property-details__price-block">
-                            <span className="property-details__price-label">
-                                Price
-                            </span>
-
-                            <strong>{price}</strong>
-
-                            {property.pricePerSqFt && (
-                                <span className="property-details__price-rate">
-                                    ₹{property.pricePerSqFt}/sq.ft.
-                                </span>
-                            )}
-
-                            <a
-                                href="#property-enquiry"
-                                className="property-details__price-cta"
-                            >
-                                Get Price Details
-                                <ArrowRight size={16} />
-                            </a>
-                        </div>
-                    </section>
-
                     {/* Property gallery */}
                     <section className="property-details__gallery-section">
                         <PropertyGallery

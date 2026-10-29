@@ -1,0 +1,388 @@
+/* =========================================================
+   PROPERTY HERO HEAD SECTION (VIEW DETAILS PAGES)
+   Pune Property Investor
+========================================================= */
+
+.property-hero-head {
+    position: relative;
+    width: 100%;
+    min-height: 420px;
+    padding: 135px 0 45px;
+    overflow: hidden;
+    isolation: isolate;
+    background: #0c1017;
+    color: var(--text-white, #ffffff);
+    box-sizing: border-box;
+    font-family: var(--font-sans);
+}
+
+.property-hero-head *,
+.property-hero-head *::before,
+.property-hero-head *::after {
+    box-sizing: border-box;
+}
+
+/* Background image & deep cinematic overlay */
+.property-hero-head__bg {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    background-size: cover;
+    background-position: center 42%;
+    background-repeat: no-repeat;
+    transform: scale(1.02);
+    filter: brightness(0.9);
+}
+
+.property-hero-head__overlay {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(
+        90deg,
+        rgba(12, 16, 23, 0.96) 0%,
+        rgba(12, 16, 23, 0.88) 52%,
+        rgba(12, 16, 23, 0.62) 100%
+    );
+}
+
+.property-hero-head__container {
+    width: min(94%, 1500px);
+    margin: 0 auto;
+}
+
+/* =========================================================
+   BREADCRUMBS
+========================================================= */
+
+.property-hero-head__breadcrumb {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin-bottom: 22px;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.72);
+}
+
+.property-hero-head__breadcrumb a {
+    color: rgba(255, 255, 255, 0.88);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.property-hero-head__breadcrumb a:hover {
+    color: #ffd875;
+}
+
+.property-hero-head__crumb-sep {
+    color: rgba(255, 255, 255, 0.45);
+    font-size: 12px;
+}
+
+.property-hero-head__crumb-current {
+    max-width: 380px;
+    overflow: hidden;
+    color: #f3cf8a;
+    font-weight: 600;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* =========================================================
+   HERO CONTENT GRID
+========================================================= */
+
+.property-hero-head__content-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.65fr) minmax(290px, 1fr);
+    align-items: end;
+    gap: 36px;
+}
+
+.property-hero-head__info {
+    min-width: 0;
+}
+
+/* =========================================================
+   BADGES
+========================================================= */
+
+.property-hero-head__badges {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.property-hero-head__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.property-hero-head__badge--eyebrow {
+    background: rgba(212, 175, 55, 0.2);
+    border: 1px solid rgba(212, 175, 55, 0.5);
+    color: #ffd875;
+}
+
+.property-hero-head__badge--verified {
+    background: rgba(16, 185, 129, 0.22);
+    border: 1px solid rgba(16, 185, 129, 0.5);
+    color: #6ee7b7;
+}
+
+.property-hero-head__badge--featured {
+    background: rgba(245, 158, 11, 0.22);
+    border: 1px solid rgba(245, 158, 11, 0.5);
+    color: #fcd34d;
+}
+
+.property-hero-head__badge--type {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: #ffffff;
+}
+
+/* =========================================================
+   TITLE & META
+========================================================= */
+
+.property-hero-head__title {
+    margin: 0 0 14px;
+    color: var(--text-white, #ffffff);
+    font-family: var(--font-serif);
+    font-size: clamp(28px, 3.6vw, 46px);
+    font-weight: 700;
+    line-height: 1.18;
+    letter-spacing: -0.015em;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.4);
+    overflow-wrap: anywhere;
+}
+
+.property-hero-head__meta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px 14px;
+    margin-bottom: 22px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.property-hero-head__location {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin: 0;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.property-hero-head__location svg {
+    flex-shrink: 0;
+    color: #f3cf8a;
+}
+
+.property-hero-head__project-name,
+.property-hero-head__developer {
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 13px;
+}
+
+/* =========================================================
+   HIGHLIGHT PILLS
+========================================================= */
+
+.property-hero-head__highlights {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.property-hero-head__pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.property-hero-head__pill svg {
+    flex-shrink: 0;
+    color: #f3cf8a;
+}
+
+/* =========================================================
+   RIGHT ACTION / PRICE CARD
+========================================================= */
+
+.property-hero-head__action-card {
+    display: flex;
+    flex-direction: column;
+    padding: 24px 26px;
+    background: rgba(20, 27, 39, 0.82);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(212, 175, 55, 0.35);
+    border-radius: 16px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+}
+
+.property-hero-head__price-wrap {
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.property-hero-head__price-label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.68);
+}
+
+.property-hero-head__price-value {
+    font-family: var(--font-serif);
+    font-size: clamp(28px, 2.6vw, 38px);
+    font-weight: 700;
+    color: #fadc8c;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+}
+
+.property-hero-head__price-rate {
+    display: inline-block;
+    margin-top: 6px;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.72);
+}
+
+/* =========================================================
+   CTA BUTTONS
+========================================================= */
+
+.property-hero-head__cta-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.property-hero-head__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    min-height: 44px;
+    padding: 10px 18px;
+    border-radius: 9px;
+    font-size: 13.5px;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.property-hero-head__btn:hover {
+    transform: translateY(-2px);
+}
+
+.property-hero-head__btn--primary {
+    background: linear-gradient(135deg, #c59b27 0%, #aa7c11 100%);
+    border: 1px solid #e5c158;
+    color: #ffffff;
+    box-shadow: 0 4px 16px rgba(197, 155, 39, 0.35);
+}
+
+.property-hero-head__btn--primary:hover {
+    background: linear-gradient(135deg, #d4af37 0%, #b88615 100%);
+}
+
+.property-hero-head__contact-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.property-hero-head__btn--whatsapp {
+    background: rgba(37, 211, 102, 0.16);
+    border: 1px solid rgba(37, 211, 102, 0.45);
+    color: #25d366;
+}
+
+.property-hero-head__btn--whatsapp:hover {
+    background: rgba(37, 211, 102, 0.26);
+    color: #ffffff;
+}
+
+.property-hero-head__btn--call {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    color: #ffffff;
+}
+
+.property-hero-head__btn--call:hover {
+    background: rgba(255, 255, 255, 0.18);
+}
+
+/* =========================================================
+   RESPONSIVE DESIGN
+========================================================= */
+
+@media (max-width: 1100px) {
+    .property-hero-head {
+        padding: 120px 0 40px;
+        min-height: auto;
+    }
+
+    .property-hero-head__content-grid {
+        grid-template-columns: 1fr;
+        gap: 26px;
+    }
+
+    .property-hero-head__action-card {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 680px) {
+    .property-hero-head {
+        padding: 105px 0 35px;
+    }
+
+    .property-hero-head__title {
+        font-size: 26px;
+    }
+
+    .property-hero-head__highlights {
+        gap: 8px;
+    }
+
+    .property-hero-head__pill {
+        padding: 7px 11px;
+        font-size: 12px;
+    }
+
+    .property-hero-head__contact-row {
+        grid-template-columns: 1fr;
+    }
+}
+

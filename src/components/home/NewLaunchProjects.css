@@ -5,8 +5,8 @@
 ========================================= */
 
 .new-launch {
-    --launch-ink: #252b29;
-    --launch-muted: #777e78;
+    --launch-ink: var(--text-primary, #0f172a);
+    --launch-muted: var(--text-secondary, #334155);
     --launch-accent: #a77a48;
     --launch-border: #e8e6e0;
     --launch-surface: #f8f7f3;
@@ -37,6 +37,7 @@
 }
 
 .new-launch__eyebrow {
+    font-family: var(--font-sans);
     display: inline-flex;
     align-items: center;
     gap: 11px;
@@ -56,7 +57,7 @@
 
 .new-launch__intro h2 {
     margin: 0;
-    font-family: "Playfair Display", Georgia, serif;
+    font-family: var(--font-serif);
     font-size: clamp(36px, 4.2vw, 59px);
     font-weight: 500;
     line-height: 1.13;
@@ -68,6 +69,7 @@
 }
 
 .new-launch__intro p {
+    font-family: var(--font-sans);
     max-width: 510px;
     margin: 20px 0 0;
     color: var(--launch-muted);
@@ -76,6 +78,7 @@
 }
 
 .new-launch__view-all {
+    font-family: var(--font-sans);
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -169,6 +172,7 @@
 /* Status badge */
 
 .launch-card__status {
+    font-family: var(--font-sans);
     position: absolute;
     z-index: 2;
     top: 18px;
@@ -200,7 +204,7 @@
     right: 18px;
     bottom: 15px;
     color: rgba(255, 255, 255, 0.9);
-    font-family: "Playfair Display", Georgia, serif;
+    font-family: var(--font-serif);
     font-size: 28px;
     font-weight: 500;
 }
@@ -258,7 +262,7 @@
 
 .launch-card__content h3 {
     margin: 17px 0 6px;
-    font-family: "Playfair Display", Georgia, serif;
+    font-family: var(--font-serif);
     font-size: 27px;
     font-weight: 500;
     line-height: 1.25;
@@ -266,6 +270,7 @@
 }
 
 .launch-card__developer {
+    font-family: var(--font-sans);
     margin: 0;
     color: var(--launch-muted);
     font-size: 12px;
@@ -273,6 +278,7 @@
 }
 
 .launch-card__location {
+    font-family: var(--font-sans);
     display: flex;
     align-items: center;
     gap: 8px;

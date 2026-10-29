@@ -1,5 +1,20 @@
 :root {
-    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    /* Exact font family system requested */
+    --font-serif: var(--font-serif), "Playfair Display", Georgia, serif;
+    --font-sans: var(--font-sans), "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-inter: var(--font-sans);
+
+    /* Professional Black & White / Obsidian Text Theme */
+    --text-primary: #0f172a;        /* Deep obsidian black for primary headings & text on light surfaces */
+    --text-secondary: #334155;      /* Slate charcoal for body text, subtitles, descriptions, specs on light */
+    --text-muted: #64748b;          /* Graphite for captions, meta, helpers */
+    --text-light: #94a3b8;          /* Light slate */
+    --text-white: #ffffff;          /* Pure crisp white for text on dark backgrounds (hero, footer, dark overlays) */
+    --text-white-muted: rgba(255, 255, 255, 0.88); /* Soft white for readable body on dark surfaces */
+    --text-white-subtle: rgba(255, 255, 255, 0.65); /* Subtle white for captions on dark */
+    --text-gold: #c59b27;           /* Warm luxury gold for accents & highlights */
+
+    font-family: var(--font-sans);
 
     /* Ultra-Premium Brand Palette */
     --primary-color: #c59b27;
@@ -12,12 +27,6 @@
     --accent-gold: #d4af37;
     --accent-emerald: #059669;
     --accent-emerald-light: #e6f7ef;
-
-    /* Text Colors */
-    --text-primary: #111827;
-    --text-secondary: #4b5563;
-    --text-light: #9ca3af;
-    --text-gold: #b38618;
 
     /* Luxury Backgrounds */
     --background-color: #faf9f6;

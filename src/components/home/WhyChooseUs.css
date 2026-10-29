@@ -16,6 +16,7 @@
 }
 
 .why-choose-us__eyebrow {
+    font-family: var(--font-sans);
     display: inline-block;
     margin-bottom: 10px;
     color: #a9823d;
@@ -26,15 +27,15 @@
 
 .why-choose-us__heading h2 {
     margin: 0 0 12px;
-    color: #30243a;
-    font-family: "Playfair Display", Georgia, serif;
+    color: var(--text-primary);
+    font-family: var(--font-serif);
     font-size: clamp(29px, 4vw, 42px);
     line-height: 1.25;
 }
 
 .why-choose-us__heading p {
     margin: 0;
-    color: #746d79;
+    color: var(--text-secondary);
     font-size: 15px;
     line-height: 1.8;
 }
@@ -88,15 +89,16 @@
 
 .why-card__content h3 {
     margin: 2px 0 8px;
-    color: #30243a;
-    font-family: "Playfair Display", Georgia, serif;
+    color: var(--text-primary);
+    font-family: var(--font-serif);
     font-size: 19px;
     line-height: 1.4;
 }
 
 .why-card__content p {
+    font-family: var(--font-sans);
     margin: 0;
-    color: #746d79;
+    color: var(--text-secondary);
     font-size: 13px;
     line-height: 1.8;
 }

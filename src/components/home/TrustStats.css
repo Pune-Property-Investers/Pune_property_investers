@@ -27,7 +27,7 @@
     display: block;
     margin-bottom: 10px;
     color: #a9823d;
-    font-family: "DM Sans", Arial, sans-serif;
+    font-family: var(--font-sans);
     font-size: 11px;
     font-weight: 700;
     letter-spacing: 2px;
@@ -35,8 +35,8 @@
 
 .trust-stats__heading {
     margin: 0;
-    color: #30243a;
-    font-family: "Playfair Display", Georgia, serif;
+    color: var(--text-primary);
+    font-family: var(--font-serif);
     font-size: clamp(25px, 3vw, 34px);
     font-weight: 700;
     line-height: 1.4;
@@ -109,7 +109,7 @@
     justify-content: center;
     border-radius: 50%;
     background: #f3f3ee;
-    color: #30243a;
+    color: var(--text-primary);
     transition:
             color 0.3s ease,
             background 0.3s ease,
@@ -131,7 +131,7 @@
     border-radius: 50%;
     background: #30243a;
     color: #ffffff;
-    font-family: "DM Sans", Arial, sans-serif;
+    font-family: var(--font-sans);
     font-size: 10px;
     font-weight: 700;
 }
@@ -141,8 +141,8 @@
 .trust-stats__value {
     min-height: 31px;
     margin: 21px 0 9px;
-    color: #4b2184;
-    font-family: "Playfair Display", Georgia, serif;
+    color: var(--text-primary);
+    font-family: var(--font-serif);
     font-size: clamp(20px, 1.65vw, 25px);
     font-weight: 700;
     line-height: 1.35;
@@ -153,8 +153,8 @@
 
 .trust-stats__label {
     margin: 0;
-    color: #30243a;
-    font-family: "DM Sans", Arial, sans-serif;
+    color: var(--text-secondary);
+    font-family: var(--font-sans);
     font-size: 14px;
     font-weight: 600;
     line-height: 1.6;
