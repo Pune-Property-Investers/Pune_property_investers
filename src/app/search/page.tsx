@@ -1,22 +1,25 @@
-import { redirect } from "next/navigation";
+"use client";
 
-type PageProps = {
-    searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
-};
+import { useEffect, Suspense } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 
-export default async function SearchRedirectPage({ searchParams }: PageProps) {
-    const params = await searchParams;
-    const query = new URLSearchParams();
+function SearchRedirect() {
+    const router = useRouter();
+    const searchParams = useSearchParams();
 
-    for (const [key, value] of Object.entries(params)) {
-        if (typeof value === "string") {
-            query.set(key, value);
-        } else if (Array.isArray(value)) {
-            value.forEach((v) => query.append(key, v));
-        }
-    }
+    useEffect(() => {
+        const queryString = searchParams.toString();
+        router.replace(queryString ? `/buy?${queryString}` : "/buy");
+    }, [router, searchParams]);
 
-    const queryString = query.toString();
-    redirect(queryString ? `/buy?${queryString}` : "/buy");
+    return null;
+}
+
+export default function SearchRedirectPage() {
+    return (
+        <Suspense fallback={null}>
+            <SearchRedirect />
+        </Suspense>
+    );
 }
 

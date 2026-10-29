@@ -5,6 +5,10 @@ type PageProps = {
     params: Promise<{ slug: string[] }>;
 };
 
+export function generateStaticParams() {
+    return [{ slug: ["guide"] }];
+}
+
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
     const { slug } = await params;
     const readableTitle = (slug || [])

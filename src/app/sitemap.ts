@@ -2,6 +2,8 @@ import { MetadataRoute } from "next";
 import propertyListingsData from "../data/propertyListingsData.js";
 import trendingProjects from "../data/trendingProjectsData.js";
 
+export const dynamic = "force-static";
+
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = "https://punepropertyinvestor.com";
 
