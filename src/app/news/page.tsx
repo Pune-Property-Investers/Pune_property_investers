@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import PlaceholderPage from "../../components/common/PlaceholderPage";
+import News from "../../components/pages/News";
 
 export const metadata: Metadata = {
     title: "Pune Property News | Infrastructure & Market Updates",
@@ -11,11 +11,5 @@ export const metadata: Metadata = {
 };
 
 export default function NewsPage() {
-    return (
-        <PlaceholderPage
-            title="Pune Property News"
-            description="Stay updated on Pune infrastructure developments, Metro Line expansions, and local real estate policy updates."
-        />
-    );
+    return <News />;
 }
-

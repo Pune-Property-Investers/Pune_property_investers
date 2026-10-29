@@ -23,11 +23,11 @@ const DEFAULT_FILTERS = {
     sortBy: "recommended",
 };
 
-function BuyPropertiesContent() {
+function BuyPropertiesContent({ defaultPropertyType = "", pageTitle = "" }) {
     const searchParams = useSearchParams();
     const initialLocation = searchParams?.get("location") || "all";
     const initialBhk = searchParams?.get("bhk") || "all";
-    const initialType = searchParams?.get("type") || "all";
+    const initialType = searchParams?.get("type") || defaultPropertyType || "all";
     const initialProject = searchParams?.get("project") || "";
 
     const [filters, setFilters] = useState({
@@ -226,7 +226,7 @@ function BuyPropertiesContent() {
                                 </span>
 
                                 <h2>
-                                    Properties for Sale in Pune
+                                    {pageTitle || "Properties for Sale in Pune"}
                                 </h2>
 
                                 <p>
@@ -375,6 +375,6 @@ function BuyPropertiesContent() {
     );
 }
 
-export default function BuyProperties() {
-    return <BuyPropertiesContent />;
+export default function BuyProperties({ defaultPropertyType = "", pageTitle = "" }) {
+    return <BuyPropertiesContent defaultPropertyType={defaultPropertyType} pageTitle={pageTitle} />;
 }

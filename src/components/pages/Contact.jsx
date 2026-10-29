@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import Header from "../layouts/Header";
 import Footer from "../layouts/Footer";
+import PageHeroBanner from "../common/PageHeroBanner";
 
 const WHATSAPP_NUMBER = "917398174444";
 const PHONE_NUMBER = "+917398174444";
@@ -52,33 +53,29 @@ export default function ContactPage() {
         <div style={{ background: "var(--background-color)", minHeight: "100vh" }}>
             <Header />
 
-            <main style={{ paddingTop: "120px", paddingBottom: "80px" }}>
-                <section className="container" style={{ textAlign: "center", marginBottom: "50px" }}>
-                    <span
+            <main>
+                {/* Hero Header Section */}
+                <PageHeroBanner
+                    title="Connect With Our"
+                    titleAccent="Pune Real Estate Advisors."
+                    eyebrow="GET IN TOUCH"
+                    description="Have questions about newly launched projects, pricing, or property investment in Pune? Reach out today for personalized recommendations and site visit scheduling."
+                    breadcrumbs={[
+                        { label: "Home", href: "/" },
+                        { label: "Contact Us" },
+                    ]}
+                    backgroundImage="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=85"
+                    icon={Phone}
+                />
+
+                <div className="container" style={{ padding: "60px 0 80px" }}>
+                    <div
                         style={{
-                            display: "inline-block",
-                            padding: "6px 16px",
-                            background: "rgba(197, 155, 39, 0.12)",
-                            color: "var(--primary-color)",
-                            borderRadius: "20px",
-                            fontSize: "0.85rem",
-                            fontWeight: "700",
-                            marginBottom: "16px",
-                            letterSpacing: "1px",
+                            display: "grid",
+                            gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))",
+                            gap: "40px",
                         }}
                     >
-                        GET IN TOUCH
-                    </span>
-                    <h1 style={{ fontSize: "clamp(2rem, 3.5vw, 2.8rem)", color: "var(--secondary-color)", fontWeight: "800", marginBottom: "16px" }}>
-                        Connect With Our <span style={{ color: "var(--primary-color)" }}>Pune Real Estate Advisors</span>
-                    </h1>
-                    <p style={{ color: "var(--text-secondary)", fontSize: "1.05rem", maxWidth: "680px", margin: "0 auto", lineHeight: 1.6 }}>
-                        Have questions about newly launched projects, pricing, or property investment in Pune? Reach out today for personalized recommendations and site visit scheduling.
-                    </p>
-                </section>
-
-                <section className="container">
-                    <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))", gap: "40px" }}>
                         {/* Contact Form */}
                         <div
                             style={{
@@ -89,197 +86,426 @@ export default function ContactPage() {
                                 boxShadow: "var(--shadow-md)",
                             }}
                         >
-                            <h2 style={{ fontSize: "1.6rem", fontWeight: "700", color: "var(--secondary-color)", marginBottom: "8px" }}>
+                            <h2
+                                style={{
+                                    fontSize: "1.6rem",
+                                    fontWeight: "700",
+                                    color: "var(--secondary-color)",
+                                    marginBottom: "8px",
+                                }}
+                            >
                                 Send Us a Message
                             </h2>
-                            <p style={{ color: "var(--text-secondary)", fontSize: "0.95rem", marginBottom: "28px" }}>
+                            <p
+                                style={{
+                                    color: "var(--text-secondary)",
+                                    fontSize: "0.95rem",
+                                    marginBottom: "28px",
+                                }}
+                            >
                                 Fill out your details below and we will connect with you right away on WhatsApp or by call.
                             </p>
 
-                            <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "18px" }}>
+                            <form
+                                onSubmit={handleSubmit}
+                                style={{
+                                    display: "flex",
+                                    flexDirection: "column",
+                                    gap: "18px",
+                                }}
+                            >
                                 <div>
-                                    <label style={{ display: "block", fontSize: "0.9rem", fontWeight: "600", color: "var(--text-primary)", marginBottom: "6px" }} htmlFor="contact-name">
-                                        Full Name *
+                                    <label
+                                        style={{
+                                            display: "block",
+                                            marginBottom: "6px",
+                                            fontSize: "0.88rem",
+                                            fontWeight: "600",
+                                            color: "var(--secondary-color)",
+                                        }}
+                                    >
+                                        Your Full Name *
                                     </label>
                                     <input
-                                        id="contact-name"
-                                        name="name"
                                         type="text"
                                         required
-                                        placeholder="e.g. Rahul Sharma"
+                                        name="name"
                                         value={formData.name}
                                         onChange={handleChange}
-                                        style={{ width: "100%", padding: "12px 14px", borderRadius: "8px", border: "1px solid #d1d5db", fontSize: "0.95rem" }}
+                                        placeholder="e.g. Amit Patil"
+                                        style={{
+                                            width: "100%",
+                                            padding: "12px 14px",
+                                            borderRadius: "8px",
+                                            border: "1px solid #cbd5e1",
+                                            fontSize: "0.95rem",
+                                        }}
                                     />
                                 </div>
 
-                                <div>
-                                    <label style={{ display: "block", fontSize: "0.9rem", fontWeight: "600", color: "var(--text-primary)", marginBottom: "6px" }} htmlFor="contact-phone">
-                                        Mobile Number *
-                                    </label>
-                                    <input
-                                        id="contact-phone"
-                                        name="phone"
-                                        type="tel"
-                                        required
-                                        placeholder="e.g. +91 98765 43210"
-                                        value={formData.phone}
-                                        onChange={handleChange}
-                                        style={{ width: "100%", padding: "12px 14px", borderRadius: "8px", border: "1px solid #d1d5db", fontSize: "0.95rem" }}
-                                    />
+                                <div
+                                    style={{
+                                        display: "grid",
+                                        gridTemplateColumns:
+                                            "repeat(auto-fit, minmax(180px, 1fr))",
+                                        gap: "14px",
+                                    }}
+                                >
+                                    <div>
+                                        <label
+                                            style={{
+                                                display: "block",
+                                                marginBottom: "6px",
+                                                fontSize: "0.88rem",
+                                                fontWeight: "600",
+                                                color: "var(--secondary-color)",
+                                            }}
+                                        >
+                                            Phone / WhatsApp *
+                                        </label>
+                                        <input
+                                            type="tel"
+                                            required
+                                            name="phone"
+                                            value={formData.phone}
+                                            onChange={handleChange}
+                                            placeholder="e.g. +91 98765 43210"
+                                            style={{
+                                                width: "100%",
+                                                padding: "12px 14px",
+                                                borderRadius: "8px",
+                                                border: "1px solid #cbd5e1",
+                                                fontSize: "0.95rem",
+                                            }}
+                                        />
+                                    </div>
+
+                                    <div>
+                                        <label
+                                            style={{
+                                                display: "block",
+                                                marginBottom: "6px",
+                                                fontSize: "0.88rem",
+                                                fontWeight: "600",
+                                                color: "var(--secondary-color)",
+                                            }}
+                                        >
+                                            Email Address
+                                        </label>
+                                        <input
+                                            type="email"
+                                            name="email"
+                                            value={formData.email}
+                                            onChange={handleChange}
+                                            placeholder="e.g. amit@example.com"
+                                            style={{
+                                                width: "100%",
+                                                padding: "12px 14px",
+                                                borderRadius: "8px",
+                                                border: "1px solid #cbd5e1",
+                                                fontSize: "0.95rem",
+                                            }}
+                                        />
+                                    </div>
                                 </div>
 
                                 <div>
-                                    <label style={{ display: "block", fontSize: "0.9rem", fontWeight: "600", color: "var(--text-primary)", marginBottom: "6px" }} htmlFor="contact-email">
-                                        Email Address (Optional)
-                                    </label>
-                                    <input
-                                        id="contact-email"
-                                        name="email"
-                                        type="email"
-                                        placeholder="e.g. rahul@example.com"
-                                        value={formData.email}
-                                        onChange={handleChange}
-                                        style={{ width: "100%", padding: "12px 14px", borderRadius: "8px", border: "1px solid #d1d5db", fontSize: "0.95rem" }}
-                                    />
-                                </div>
-
-                                <div>
-                                    <label style={{ display: "block", fontSize: "0.9rem", fontWeight: "600", color: "var(--text-primary)", marginBottom: "6px" }} htmlFor="contact-locality">
-                                        Locality of Interest
+                                    <label
+                                        style={{
+                                            display: "block",
+                                            marginBottom: "6px",
+                                            fontSize: "0.88rem",
+                                            fontWeight: "600",
+                                            color: "var(--secondary-color)",
+                                        }}
+                                    >
+                                        Preferred Pune Locality
                                     </label>
                                     <select
-                                        id="contact-locality"
                                         name="locality"
                                         value={formData.locality}
                                         onChange={handleChange}
-                                        style={{ width: "100%", padding: "12px 14px", borderRadius: "8px", border: "1px solid #d1d5db", fontSize: "0.95rem", background: "#ffffff" }}
+                                        style={{
+                                            width: "100%",
+                                            padding: "12px 14px",
+                                            borderRadius: "8px",
+                                            border: "1px solid #cbd5e1",
+                                            fontSize: "0.95rem",
+                                            background: "#ffffff",
+                                        }}
                                     >
-                                        <option value="Kharadi">Kharadi</option>
-                                        <option value="Baner">Baner</option>
-                                        <option value="Wakad">Wakad</option>
-                                        <option value="Hinjewadi">Hinjewadi</option>
-                                        <option value="Wagholi">Wagholi</option>
-                                        <option value="Hadapsar">Hadapsar</option>
-                                        <option value="Dhanori">Dhanori</option>
-                                        <option value="Koregaon Park">Koregaon Park</option>
-                                        <option value="Other">Other / Multiple Localities</option>
+                                        <option value="Kharadi">Kharadi (East Pune)</option>
+                                        <option value="Baner">Baner (West Pune)</option>
+                                        <option value="Wakad">Wakad (West Pune)</option>
+                                        <option value="Hinjewadi">Hinjewadi (IT Park)</option>
+                                        <option value="Wagholi">Wagholi (Nagar Road)</option>
+                                        <option value="Hadapsar / Magarpatta">Hadapsar / Magarpatta</option>
+                                        <option value="NIBM / Undri">NIBM / Undri (South Pune)</option>
+                                        <option value="Other">Other / Flexible</option>
                                     </select>
                                 </div>
 
                                 <div>
-                                    <label style={{ display: "block", fontSize: "0.9rem", fontWeight: "600", color: "var(--text-primary)", marginBottom: "6px" }} htmlFor="contact-message">
-                                        Requirement / Message
+                                    <label
+                                        style={{
+                                            display: "block",
+                                            marginBottom: "6px",
+                                            fontSize: "0.88rem",
+                                            fontWeight: "600",
+                                            color: "var(--secondary-color)",
+                                        }}
+                                    >
+                                        Your Requirements / Message
                                     </label>
                                     <textarea
-                                        id="contact-message"
+                                        rows={4}
                                         name="message"
-                                        rows={3}
-                                        placeholder="Looking for 2 BHK in Kharadi under ₹85 Lakhs..."
                                         value={formData.message}
                                         onChange={handleChange}
-                                        style={{ width: "100%", padding: "12px 14px", borderRadius: "8px", border: "1px solid #d1d5db", fontSize: "0.95rem" }}
+                                        placeholder="Looking for 2 or 3 BHK near IT Park with budget around 80 Lakhs..."
+                                        style={{
+                                            width: "100%",
+                                            padding: "12px 14px",
+                                            borderRadius: "8px",
+                                            border: "1px solid #cbd5e1",
+                                            fontSize: "0.95rem",
+                                            fontFamily: "inherit",
+                                        }}
                                     />
                                 </div>
 
                                 <button
                                     type="submit"
                                     className="primary-button"
-                                    style={{ width: "100%", padding: "14px", fontSize: "1rem", marginTop: "10px", cursor: "pointer" }}
+                                    style={{
+                                        width: "100%",
+                                        justifyContent: "center",
+                                        padding: "14px",
+                                    }}
                                 >
-                                    <Send size={18} />
-                                    Send Enquiry via WhatsApp
+                                    Send Inquiry via WhatsApp
+                                    <Send size={16} />
                                 </button>
-
-                                {submitted && (
-                                    <p style={{ color: "#059669", fontSize: "0.9rem", fontWeight: "600", textAlign: "center" }}>
-                                        WhatsApp has been opened with your inquiry!
-                                    </p>
-                                )}
-
-                                <p style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "6px", color: "var(--text-light)", fontSize: "0.85rem", marginTop: "6px" }}>
-                                    <ShieldCheck size={16} /> We respect your privacy. No spam guaranteed.
-                                </p>
                             </form>
                         </div>
 
-                        {/* Contact Information & Map Info */}
-                        <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
-                            <div style={{ background: "#ffffff", padding: "36px 30px", borderRadius: "20px", border: "1px solid var(--border-subtle)", boxShadow: "var(--shadow-sm)" }}>
-                                <h3 style={{ fontSize: "1.3rem", fontWeight: "700", color: "var(--secondary-color)", marginBottom: "20px" }}>
+                        {/* Direct Contact Info & Office */}
+                        <div
+                            style={{
+                                display: "flex",
+                                flexDirection: "column",
+                                gap: "24px",
+                            }}
+                        >
+                            <div
+                                style={{
+                                    background: "#ffffff",
+                                    padding: "36px 30px",
+                                    borderRadius: "20px",
+                                    border: "1px solid var(--border-subtle)",
+                                    boxShadow: "var(--shadow-sm)",
+                                }}
+                            >
+                                <h3
+                                    style={{
+                                        fontSize: "1.3rem",
+                                        fontWeight: "700",
+                                        color: "var(--secondary-color)",
+                                        marginBottom: "20px",
+                                    }}
+                                >
                                     Office Headquarters
                                 </h3>
-
-                                <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
-                                    <div style={{ display: "flex", gap: "14px", alignItems: "flex-start" }}>
-                                        <div style={{ padding: "10px", background: "rgba(197, 155, 39, 0.12)", color: "var(--primary-color)", borderRadius: "10px" }}>
-                                            <MapPin size={22} />
-                                        </div>
-                                        <div>
-                                            <strong style={{ display: "block", color: "var(--text-primary)", fontSize: "1rem" }}>Address</strong>
-                                            <p style={{ color: "var(--text-secondary)", fontSize: "0.9rem", lineHeight: 1.5, marginTop: "4px" }}>
-                                                3rd Floor (Suite 904), Gera Imperium Alpha, Grant Road, Vitthal Nagar, Kharadi, Pune, Maharashtra 411014, India
-                                            </p>
-                                        </div>
+                                <div
+                                    style={{
+                                        display: "flex",
+                                        gap: "14px",
+                                        alignItems: "flex-start",
+                                        marginBottom: "22px",
+                                    }}
+                                >
+                                    <MapPin
+                                        size={22}
+                                        color="var(--primary-color)"
+                                        style={{ flexShrink: 0, marginTop: "4px" }}
+                                    />
+                                    <div>
+                                        <strong
+                                            style={{
+                                                display: "block",
+                                                color: "var(--secondary-color)",
+                                                marginBottom: "4px",
+                                            }}
+                                        >
+                                            Pune Property Investors
+                                        </strong>
+                                        <span
+                                            style={{
+                                                color: "var(--text-secondary)",
+                                                lineHeight: 1.6,
+                                                fontSize: "0.95rem",
+                                            }}
+                                        >
+                                            3rd Floor, Gera Imperium Alpha, Grant Road,
+                                            Vitthal Nagar, Kharadi, Pune, Maharashtra
+                                            411014
+                                        </span>
                                     </div>
+                                </div>
 
-                                    <div style={{ display: "flex", gap: "14px", alignItems: "flex-start" }}>
-                                        <div style={{ padding: "10px", background: "rgba(197, 155, 39, 0.12)", color: "var(--primary-color)", borderRadius: "10px" }}>
-                                            <Phone size={22} />
-                                        </div>
-                                        <div>
-                                            <strong style={{ display: "block", color: "var(--text-primary)", fontSize: "1rem" }}>Call or WhatsApp</strong>
-                                            <a href={`tel:${PHONE_NUMBER}`} style={{ color: "var(--primary-dark)", fontWeight: "600", fontSize: "0.95rem", display: "inline-block", marginTop: "4px" }}>
-                                                +91 73981 74444
-                                            </a>
-                                        </div>
+                                <div
+                                    style={{
+                                        display: "flex",
+                                        gap: "14px",
+                                        alignItems: "center",
+                                        marginBottom: "16px",
+                                    }}
+                                >
+                                    <Phone
+                                        size={20}
+                                        color="var(--primary-color)"
+                                        style={{ flexShrink: 0 }}
+                                    />
+                                    <div>
+                                        <span
+                                            style={{
+                                                fontSize: "0.82rem",
+                                                color: "var(--text-muted)",
+                                                display: "block",
+                                            }}
+                                        >
+                                            Advisory Hotline
+                                        </span>
+                                        <a
+                                            href={`tel:${PHONE_NUMBER}`}
+                                            style={{
+                                                color: "var(--secondary-color)",
+                                                fontWeight: "700",
+                                                fontSize: "1.05rem",
+                                                textDecoration: "none",
+                                            }}
+                                        >
+                                            +91 73981 74444
+                                        </a>
                                     </div>
+                                </div>
 
-                                    <div style={{ display: "flex", gap: "14px", alignItems: "flex-start" }}>
-                                        <div style={{ padding: "10px", background: "rgba(197, 155, 39, 0.12)", color: "var(--primary-color)", borderRadius: "10px" }}>
-                                            <Mail size={22} />
-                                        </div>
-                                        <div>
-                                            <strong style={{ display: "block", color: "var(--text-primary)", fontSize: "1rem" }}>Email Us</strong>
-                                            <a href="mailto:info@punepropertyinvestor.com" style={{ color: "var(--text-secondary)", fontSize: "0.95rem", display: "inline-block", marginTop: "4px" }}>
-                                                info@punepropertyinvestor.com
-                                            </a>
-                                        </div>
+                                <div
+                                    style={{
+                                        display: "flex",
+                                        gap: "14px",
+                                        alignItems: "center",
+                                        marginBottom: "16px",
+                                    }}
+                                >
+                                    <Mail
+                                        size={20}
+                                        color="var(--primary-color)"
+                                        style={{ flexShrink: 0 }}
+                                    />
+                                    <div>
+                                        <span
+                                            style={{
+                                                fontSize: "0.82rem",
+                                                color: "var(--text-muted)",
+                                                display: "block",
+                                            }}
+                                        >
+                                            General & Builder Inquiries
+                                        </span>
+                                        <a
+                                            href="mailto:info@punepropertyinvestor.com"
+                                            style={{
+                                                color: "var(--secondary-color)",
+                                                fontWeight: "600",
+                                                textDecoration: "none",
+                                            }}
+                                        >
+                                            info@punepropertyinvestor.com
+                                        </a>
                                     </div>
+                                </div>
 
-                                    <div style={{ display: "flex", gap: "14px", alignItems: "flex-start" }}>
-                                        <div style={{ padding: "10px", background: "rgba(197, 155, 39, 0.12)", color: "var(--primary-color)", borderRadius: "10px" }}>
-                                            <Clock size={22} />
-                                        </div>
-                                        <div>
-                                            <strong style={{ display: "block", color: "var(--text-primary)", fontSize: "1rem" }}>Business Hours</strong>
-                                            <p style={{ color: "var(--text-secondary)", fontSize: "0.9rem", marginTop: "4px" }}>
-                                                Monday to Sunday: 9:30 AM – 7:30 PM
-                                            </p>
-                                        </div>
+                                <div
+                                    style={{
+                                        display: "flex",
+                                        gap: "14px",
+                                        alignItems: "center",
+                                    }}
+                                >
+                                    <Clock
+                                        size={20}
+                                        color="var(--primary-color)"
+                                        style={{ flexShrink: 0 }}
+                                    />
+                                    <div>
+                                        <span
+                                            style={{
+                                                fontSize: "0.82rem",
+                                                color: "var(--text-muted)",
+                                                display: "block",
+                                            }}
+                                        >
+                                            Working Hours
+                                        </span>
+                                        <span
+                                            style={{
+                                                color: "var(--secondary-color)",
+                                                fontWeight: "600",
+                                                fontSize: "0.95rem",
+                                            }}
+                                        >
+                                            Monday – Sunday: 9:30 AM – 7:30 PM
+                                        </span>
                                     </div>
                                 </div>
                             </div>
 
-                            {/* Instant WhatsApp Card */}
+                            {/* WhatsApp Fast Track Card */}
                             <div
                                 style={{
-                                    background: "linear-gradient(135deg, #128C7E 0%, #075E54 100%)",
+                                    background:
+                                        "linear-gradient(135deg, #128C7E 0%, #075E54 100%)",
                                     color: "#ffffff",
-                                    padding: "30px",
+                                    padding: "32px 28px",
                                     borderRadius: "20px",
                                     boxShadow: "var(--shadow-md)",
                                 }}
                             >
-                                <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "14px" }}>
+                                <div
+                                    style={{
+                                        display: "flex",
+                                        alignItems: "center",
+                                        gap: "12px",
+                                        marginBottom: "14px",
+                                    }}
+                                >
                                     <MessageCircle size={30} />
-                                    <h4 style={{ fontSize: "1.3rem", fontWeight: "700" }}>Instant WhatsApp Consultation</h4>
+                                    <h4
+                                        style={{
+                                            fontSize: "1.3rem",
+                                            fontWeight: "700",
+                                        }}
+                                    >
+                                        Instant WhatsApp Consultation
+                                    </h4>
                                 </div>
-                                <p style={{ fontSize: "0.95rem", lineHeight: 1.6, opacity: 0.95, marginBottom: "20px" }}>
-                                    Need instant brochures, floor plans, and pricing for Pune properties? Chat directly with our senior property consultant.
+                                <p
+                                    style={{
+                                        fontSize: "0.95rem",
+                                        lineHeight: 1.6,
+                                        opacity: 0.95,
+                                        marginBottom: "20px",
+                                    }}
+                                >
+                                    Need instant brochures, floor plans, and
+                                    pricing for Pune properties? Chat directly with
+                                    our senior property consultant.
                                 </p>
                                 <a
-                                    href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hello Pune Property Investor, I want to consult about buying a property in Pune.")}`}
+                                    href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+                                        "Hello Pune Property Investor, I want to consult about buying a property in Pune."
+                                    )}`}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     style={{
@@ -300,7 +526,7 @@ export default function ContactPage() {
                             </div>
                         </div>
                     </div>
-                </section>
+                </div>
             </main>
 
             <Footer />

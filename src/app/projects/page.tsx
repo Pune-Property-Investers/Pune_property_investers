@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import PlaceholderPage from "../../components/common/PlaceholderPage";
+import { Suspense } from "react";
+import BuyProperties from "../../components/pages/BuyProperties";
 
 export const metadata: Metadata = {
     title: "New Projects in Pune | Residential Townships & Towers",
@@ -12,10 +13,21 @@ export const metadata: Metadata = {
 
 export default function ProjectsPage() {
     return (
-        <PlaceholderPage
-            title="New Projects in Pune"
-            description="Discover newly launched residential projects, luxury towers, and township developments across prime Pune localities."
-        />
+        <Suspense
+            fallback={
+                <div
+                    style={{
+                        minHeight: "100vh",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                    }}
+                >
+                    Loading projects...
+                </div>
+            }
+        >
+            <BuyProperties pageTitle="New Projects in Pune" />
+        </Suspense>
     );
 }
-

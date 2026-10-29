@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Header from "../layouts/Header";
 import HeroSection from "../home/HeroSection";
 import FeaturedProperties from "../home/FeaturedProperties";
@@ -7,23 +10,34 @@ import NewLaunchProjects from "../home/NewLaunchProjects";
 import TrendingProjects from "../home/TrendingProjects";
 import WhyChooseUs from "../home/WhyChooseUs";
 import AdvertisementSidebar from "../common/AdvertisementSidebar";
+import PuneRealEstateContent from "../home/PuneRealEstateContent";
+import Testimonials from "../home/Testimonials";
+import TrustStats from "../home/TrustStats";
 
 function Home() {
+    const [activeTab, setActiveTab] = useState("projects");
+
     return (
         <>
             <Header />
 
             <main className="home-page">
                 {/* Full-width hero */}
-                <HeroSection />
+                <HeroSection
+                    activeTab={activeTab}
+                    onTabChange={setActiveTab}
+                />
 
                 {/* Main content and right advertisement sidebar */}
                 <div className="home-page__content-layout">
                     <div className="home-page__main-content">
-                        <FeaturedProperties />
+                        <FeaturedProperties
+                            filters={{ projectType: activeTab }}
+                        />
                         <BrowseLocations />
                         <NewLaunchProjects />
                         <TrendingProjects />
+                        <PuneRealEstateContent />
 
                         <section className="home-intro section">
                             <div className="container">
@@ -44,7 +58,8 @@ function Home() {
                         <AdvertisementSidebar />
                     </aside>
                 </div>
-
+                <TrustStats />
+                <Testimonials />
                 {/* Full-width Why Choose Us section */}
                 <WhyChooseUs />
             </main>

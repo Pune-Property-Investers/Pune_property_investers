@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import PlaceholderPage from "../../components/common/PlaceholderPage";
+import { Suspense } from "react";
+import BuyProperties from "../../components/pages/BuyProperties";
 
 export const metadata: Metadata = {
     title: "Commercial Properties in Pune | Office Spaces & Showrooms",
@@ -12,10 +13,24 @@ export const metadata: Metadata = {
 
 export default function CommercialPage() {
     return (
-        <PlaceholderPage
-            title="Commercial Properties in Pune"
-            description="Explore Grade-A commercial office spaces, retail showrooms, and IT park developments in Kharadi, Hinjewadi, and Baner."
-        />
+        <Suspense
+            fallback={
+                <div
+                    style={{
+                        minHeight: "100vh",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                    }}
+                >
+                    Loading commercial properties...
+                </div>
+            }
+        >
+            <BuyProperties
+                defaultPropertyType="Commercial"
+                pageTitle="Commercial Properties in Pune"
+            />
+        </Suspense>
     );
 }
-

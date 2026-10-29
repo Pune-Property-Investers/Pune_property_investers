@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import PlaceholderPage from "../../components/common/PlaceholderPage";
+import { Suspense } from "react";
+import BuyProperties from "../../components/pages/BuyProperties";
 
 export const metadata: Metadata = {
     title: "Plots & Land in Pune | NA Residential Plots & Gated Communities",
@@ -12,10 +13,24 @@ export const metadata: Metadata = {
 
 export default function PlotsPage() {
     return (
-        <PlaceholderPage
-            title="Plots & Land in Pune"
-            description="Explore clear-title residential plots, gated community layouts, and NA land opportunities in growing Pune corridors."
-        />
+        <Suspense
+            fallback={
+                <div
+                    style={{
+                        minHeight: "100vh",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                    }}
+                >
+                    Loading plots and land...
+                </div>
+            }
+        >
+            <BuyProperties
+                defaultPropertyType="Plot"
+                pageTitle="Plots & Land in Pune"
+            />
+        </Suspense>
     );
 }
-

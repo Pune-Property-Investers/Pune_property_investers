@@ -9,6 +9,7 @@ import {
     Bath,
     Ruler,
     ArrowUpRight,
+    Building2,
 } from "lucide-react";
 
 function PropertyCard({ property }) {
@@ -17,6 +18,8 @@ function PropertyCard({ property }) {
     const handleSave = () => {
         setIsSaved((previous) => !previous);
     };
+
+    const showBedBath = property.bedrooms > 0 || property.bathrooms > 0;
 
     return (
         <article className="property-card">
@@ -75,15 +78,24 @@ function PropertyCard({ property }) {
 
                 {/* Property Specifications */}
                 <div className="property-card__specifications">
-                    <div className="property-card__spec">
-                        <BedDouble size={17} />
-                        <span>{property.bedrooms} BHK</span>
-                    </div>
+                    {showBedBath ? (
+                        <>
+                            <div className="property-card__spec">
+                                <BedDouble size={17} />
+                                <span>{property.bedrooms} BHK</span>
+                            </div>
 
-                    <div className="property-card__spec">
-                        <Bath size={16} />
-                        <span>{property.bathrooms} Bath</span>
-                    </div>
+                            <div className="property-card__spec">
+                                <Bath size={16} />
+                                <span>{property.bathrooms} Bath</span>
+                            </div>
+                        </>
+                    ) : (
+                        <div className="property-card__spec">
+                            <Building2 size={17} />
+                            <span>{property.configuration || property.propertyType}</span>
+                        </div>
+                    )}
 
                     <div className="property-card__spec">
                         <Ruler size={16} />
@@ -94,7 +106,7 @@ function PropertyCard({ property }) {
                 {/* Card Footer */}
                 <div className="property-card__footer">
                     <span className="property-card__availability">
-                        For Sale
+                        {property.possession || "For Sale"}
                     </span>
 
                     <Link

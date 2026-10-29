@@ -1,129 +1,129 @@
-import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
 import {
-    ShieldCheck,
-    MapPin,
+    UserRoundCheck,
+    MapPinned,
     Handshake,
-    TrendingUp,
-    ArrowUpRight,
+    ShieldCheck,
+    MessagesSquare,
+    ChartNoAxesCombined,
 } from "lucide-react";
 
-const benefits = [
+import "./WhyChooseUs.css";
+
+const reasons = [
     {
-        id: 1,
-        number: "01",
-        icon: MapPin,
-        title: "Deep Local Expertise",
+        icon: UserRoundCheck,
+        title: "Personalized Guidance",
         description:
-            "Explore Pune's property market with guidance from a team that understands localities, connectivity, infrastructure, and emerging investment destinations.",
+            "Property recommendations tailored to your requirements, preferences, and budget.",
     },
     {
-        id: 2,
-        number: "02",
-        icon: ShieldCheck,
-        title: "Transparent Guidance",
+        icon: MapPinned,
+        title: "Local Market Knowledge",
         description:
-            "Make informed property decisions with clear communication, practical insights, and guidance throughout your property search.",
+            "Explore residential opportunities across Pune and its growing neighborhoods.",
     },
     {
-        id: 3,
-        number: "03",
-        icon: TrendingUp,
-        title: "Investment-Focused Approach",
-        description:
-            "Compare locations, property options, and potential long-term value to find opportunities aligned with your investment goals.",
-    },
-    {
-        id: 4,
-        number: "04",
         icon: Handshake,
-        title: "Support at Every Step",
+        title: "Customer-Focused Service",
         description:
-            "From shortlisting properties to arranging site visits, our team helps make your property journey simpler and more organised.",
+            "Get support throughout your property search and decision-making journey.",
+    },
+    {
+        icon: ShieldCheck,
+        title: "Informed Decisions",
+        description:
+            "Understand important property details and questions to consider before buying.",
+    },
+    {
+        icon: MessagesSquare,
+        title: "Clear Communication",
+        description:
+            "Discuss your requirements and get clear information about shortlisted properties.",
+    },
+    {
+        icon: ChartNoAxesCombined,
+        title: "Investment Perspective",
+        description:
+            "Compare locations, budgets, and property options against your investment objectives.",
     },
 ];
 
-function WhyChooseUs() {
+export default function WhyChooseUs() {
+    const sectionRef = useRef(null);
+    const [isVisible, setIsVisible] = useState(false);
+
+    useEffect(() => {
+        const section = sectionRef.current;
+
+        if (!section) return;
+
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                setIsVisible(entry.isIntersecting);
+            },
+            {
+                threshold: 0.15,
+            }
+        );
+
+        observer.observe(section);
+
+        return () => observer.disconnect();
+    }, []);
+
     return (
         <section
-            className="why-choose-us"
-            aria-labelledby="why-choose-us-title"
+            ref={sectionRef}
+            className={`why-choose-us ${isVisible ? "why-choose-us--visible" : ""
+                }`}
+            id="why-choose-us"
         >
             <div className="why-choose-us__container">
-                {/* Left Content */}
-                <div className="why-choose-us__intro">
-                    <p className="why-choose-us__eyebrow">
-                        <span aria-hidden="true"></span>
-                        The PPI Difference
-                    </p>
+                <div className="why-choose-us__heading">
+                    <span
+                        className="why-choose-us__eyebrow why-animate"
+                        style={{ "--card-index": 0 }}
+                    >
+                        THE PPI DIFFERENCE
+                    </span>
 
                     <h2
-                        className="why-choose-us__title"
-                        id="why-choose-us-title"
+                        className="why-animate"
+                        style={{ "--card-index": 1 }}
                     >
-                        Your property goals.
-                        <span>Our priority.</span>
+                        Why Choose Pune Property Investors?
                     </h2>
 
-                    <p className="why-choose-us__description">
-                        Finding the right property takes more than browsing
-                        listings. It takes local knowledge, thoughtful
-                        guidance, and a team that understands what matters
-                        to you.
-                    </p>
-
-                    <p className="why-choose-us__description">
-                        At Pune Property Investor, we help homebuyers and
-                        investors explore opportunities across Pune with
-                        greater clarity and confidence.
-                    </p>
-
-                    <Link
-                        href="/contact"
-                        className="why-choose-us__cta"
+                    <p
+                        className="why-animate"
+                        style={{ "--card-index": 2 }}
                     >
-                        Talk to Our Team
-                        <ArrowUpRight size={19} aria-hidden="true" />
-                    </Link>
-
-                    <div className="why-choose-us__note">
-                        <span className="why-choose-us__note-line"></span>
-                        <p>
-                            Better guidance. More informed decisions.
-                        </p>
-                    </div>
+                        We help simplify your property search with
+                        personalized assistance and a focus on your needs.
+                    </p>
                 </div>
 
-                {/* Right Benefits */}
-                <div className="why-choose-us__benefits">
-                    {benefits.map((benefit) => {
-                        const Icon = benefit.icon;
+                <div className="why-choose-us__grid">
+                    {reasons.map((reason, index) => {
+                        const Icon = reason.icon;
 
                         return (
                             <article
-                                className="why-benefit"
-                                key={benefit.id}
+                                className="why-card why-animate"
+                                key={reason.title}
+                                style={{
+                                    "--card-index": index + 3,
+                                }}
                             >
-                                <div className="why-benefit__top">
-                                    <span className="why-benefit__number">
-                                        {benefit.number}
-                                    </span>
-
-                                    <div className="why-benefit__icon">
-                                        <Icon
-                                            size={25}
-                                            strokeWidth={1.6}
-                                            aria-hidden="true"
-                                        />
-                                    </div>
+                                <div className="why-card__icon">
+                                    <Icon size={27} strokeWidth={1.7} />
                                 </div>
 
-                                <h3 className="why-benefit__title">
-                                    {benefit.title}
-                                </h3>
-
-                                <p className="why-benefit__description">
-                                    {benefit.description}
-                                </p>
+                                <div className="why-card__content">
+                                    <h3>{reason.title}</h3>
+                                    <p>{reason.description}</p>
+                                </div>
                             </article>
                         );
                     })}
@@ -132,5 +132,3 @@ function WhyChooseUs() {
         </section>
     );
 }
-
-export default WhyChooseUs;

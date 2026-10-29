@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import PlaceholderPage from "../../components/common/PlaceholderPage";
+import Career from "../../components/pages/Career";
 
 export const metadata: Metadata = {
     title: "Careers | Pune Property Investors",
@@ -11,11 +11,5 @@ export const metadata: Metadata = {
 };
 
 export default function CareerPage() {
-    return (
-        <PlaceholderPage
-            title="Join Our Team"
-            description="Explore exciting career opportunities in real estate consulting, client relations, and digital property marketing at Pune Property Investor."
-        />
-    );
+    return <Career />;
 }
-

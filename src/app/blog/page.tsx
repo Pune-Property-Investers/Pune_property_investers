@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import PlaceholderPage from "../../components/common/PlaceholderPage";
+import Blog from "../../components/pages/Blog";
 
 export const metadata: Metadata = {
     title: "Pune Real Estate Blog | Insights, Guides & Trends",
@@ -11,11 +11,5 @@ export const metadata: Metadata = {
 };
 
 export default function BlogPage() {
-    return (
-        <PlaceholderPage
-            title="Pune Real Estate Blog"
-            description="Market insights, neighborhood guides, and home buying tips from Pune real estate experts."
-        />
-    );
+    return <Blog />;
 }
-

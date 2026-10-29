@@ -14,10 +14,6 @@ const heroImages = [
         src: "https://scontent.fpnq12-1.fna.fbcdn.net/v/t39.30808-6/655871942_923153574026518_2640021096133598017_n.jpg?stp=dst-jpg_tt6&cstp=mx1536x1024&ctp=s960x960&_nc_cat=108&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=VBAW7QGvD7IQ7kNvwFUiM6x&_nc_oc=Adoc4tQYmh8FIiT6g0m2Go44DDRV6O51-9WrOIpnzC6WlTo0BIp10AmrVuPOs2wbmgc&_nc_zt=23&_nc_ht=scontent.fpnq12-1.fna&_nc_gid=ECR1J7r-5zKJ5Us4k2lNOA&_nc_ss=7b289&oh=00_AQMbnYNLcGYSZ0EezTAIzl6iMVNKJ9ZfE12JAU2d05gbIQ&oe=6AE376D9",
         alt: "Pune property promotional banner",
     },
-    {
-        src: "https://punepropertyinvestor.com/wp-content/uploads/2026/06/PPI-Group-Photo.jpg-scaled.jpeg",
-        alt: "Pune Property Investor team",
-    },
 ];
 
 const locations = [
@@ -71,10 +67,18 @@ const budgetOptions = [
     { label: "Above ₹1.5 Cr", value: "Above 1.5 Crore" },
 ];
 
-function HeroSection() {
+const searchTabs = [
+    { key: "projects", label: "Projects" },
+    { key: "new-launches", label: "New Launches" },
+    { key: "residential", label: "Residential" },
+    { key: "commercial", label: "Commercial" },
+    { key: "plot-land", label: "Plot / Land" },
+    { key: "upcoming", label: "Upcoming" },
+];
+
+function HeroSection({ activeTab = "projects", onTabChange }) {
     const router = useRouter();
     const [activeImage, setActiveImage] = useState(0);
-    const [activeTab, setActiveTab] = useState("projects");
 
     const [location, setLocation] = useState("All Locations");
     const [propertyType, setPropertyType] = useState("Residential");
@@ -88,6 +92,25 @@ function HeroSection() {
 
         return () => window.clearInterval(timer);
     }, []);
+
+    const handleTabChange = (tabKey) => {
+        if (onTabChange) {
+            onTabChange(tabKey);
+        }
+
+        if (tabKey === "commercial") {
+            setPropertyType("Commercial");
+        } else if (tabKey === "plot-land") {
+            setPropertyType("Plot");
+        } else if (tabKey === "residential") {
+            setPropertyType("Residential");
+        }
+
+        const target = document.getElementById("featured-properties");
+        if (target) {
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+    };
 
     const handleSearch = (event) => {
         event.preventDefault();
@@ -161,35 +184,26 @@ function HeroSection() {
             {/* Property Search */}
             <div className="hero-search-wrap">
                 <div className="property-search-box">
-                    {/* Projects Tabs */}
+                    {/* Category Tabs */}
                     <div
                         className="search-tabs"
                         role="tablist"
                         aria-label="Project category"
                     >
-                        <button
-                            type="button"
-                            role="tab"
-                            aria-selected={activeTab === "projects"}
-                            className={`search-tab ${
-                                activeTab === "projects" ? "active" : ""
-                            }`}
-                            onClick={() => setActiveTab("projects")}
-                        >
-                            Projects
-                        </button>
-
-                        <button
-                            type="button"
-                            role="tab"
-                            aria-selected={activeTab === "new-launches"}
-                            className={`search-tab ${
-                                activeTab === "new-launches" ? "active" : ""
-                            }`}
-                            onClick={() => setActiveTab("new-launches")}
-                        >
-                            New Launches
-                        </button>
+                        {searchTabs.map((tab) => (
+                            <button
+                                type="button"
+                                role="tab"
+                                key={tab.key}
+                                aria-selected={activeTab === tab.key}
+                                className={`search-tab ${
+                                    activeTab === tab.key ? "active" : ""
+                                }`}
+                                onClick={() => handleTabChange(tab.key)}
+                            >
+                                {tab.label}
+                            </button>
+                        ))}
                     </div>
 
                     <form

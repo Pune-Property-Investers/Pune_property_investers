@@ -136,12 +136,12 @@
 }
 
 .property-search-box {
-    padding: 0 22px 7px;
+    padding: 0 20px 6px;
     overflow: visible;
     border: 1px solid #e7e9ee;
-    border-radius: 16px;
+    border-radius: 12px;
     background: #ffffff;
-    box-shadow: 0 6px 18px rgba(20, 30, 45, 0.15);
+    box-shadow: 0 4px 16px rgba(20, 30, 45, 0.12);
 }
 
 /* ========================================
@@ -150,12 +150,20 @@
 
 .search-tabs {
     display: flex;
-    align-items: stretch;
-    gap: 25px;
-    min-height: 52px;
+    align-items: center;
+    gap: 4px;
+    min-height: 40px;
     overflow-x: auto;
+    overflow-y: hidden;
     border-bottom: 1px solid #e7e9ee;
-    scrollbar-width: thin;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.search-tabs::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
 }
 
 .search-tab {
@@ -164,12 +172,12 @@
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    padding: 12px 8px 10px;
+    padding: 9px 12px 8px;
     border: none;
     background: transparent;
     color: #485875;
     font-family: inherit;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 600;
     white-space: nowrap;
     cursor: pointer;
@@ -189,7 +197,7 @@
     right: 0;
     bottom: -1px;
     left: 0;
-    height: 3px;
+    height: 2.5px;
     border-radius: 3px 3px 0 0;
     background: #0877d9;
     content: "";
@@ -208,8 +216,8 @@
         minmax(135px, 1fr)
         120px;
     align-items: end;
-    gap: 11px;
-    padding-top: 13px;
+    gap: 10px;
+    padding-top: 10px;
     margin: 0;
 }
 
@@ -219,9 +227,9 @@
 
 .search-field label {
     display: block;
-    margin-bottom: 4px;
+    margin-bottom: 3px;
     color: #454545;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 700;
     line-height: 1.4;
 }
@@ -236,7 +244,7 @@
     align-items: center;
     gap: 8px;
     min-width: 0;
-    min-height: 41px;
+    min-height: 38px;
     padding: 0 10px;
     border: 1px solid #dedede;
     border-radius: 8px;
@@ -260,7 +268,7 @@
     display: block;
     width: 100%;
     min-width: 0;
-    min-height: 39px;
+    min-height: 36px;
     padding: 0;
     border: none;
     outline: none;
@@ -308,7 +316,7 @@
     gap: 7px;
     width: 100%;
     min-width: 0;
-    min-height: 41px;
+    min-height: 38px;
     padding: 0 10px;
     border: none;
     border-radius: 8px;
@@ -344,7 +352,8 @@
     align-items: center;
     flex-wrap: wrap;
     gap: 6px;
-    margin-top: 9px;
+    margin-top: 7px;
+    padding-bottom: 2px;
     color: #69758b;
     font-size: 12px;
 }
@@ -355,7 +364,7 @@
 }
 
 .search-footer button {
-    padding: 5px 10px;
+    padding: 4px 10px;
     border: 1px solid #e3e8ef;
     border-radius: 22px;
     background: #ffffff;
@@ -499,50 +508,50 @@
     }
 
     .property-search-box {
-        padding: 0 12px 7px;
+        padding: 0 12px 5px;
         border-radius: 12px;
     }
 
     .search-tabs {
-        min-height: 45px;
-        gap: 16px;
+        min-height: 40px;
+        gap: 4px;
     }
 
     .search-tab {
-        padding: 11px 5px 9px;
-        font-size: 12px;
+        padding: 9px 6px 7px;
+        font-size: 11px;
     }
 
     .property-search-form {
         grid-template-columns: minmax(0, 1fr);
         gap: 9px;
-        padding-top: 11px;
+        padding-top: 9px;
     }
 
     .search-field label {
-        margin-bottom: 4px;
+        margin-bottom: 3px;
         font-size: 11px;
     }
 
     .field-control {
-        min-height: 40px;
+        min-height: 38px;
         padding: 0 10px;
     }
 
     .field-control input,
     .field-control select {
-        min-height: 38px;
+        min-height: 36px;
         font-size: 12px;
     }
 
     .search-submit-button {
-        min-height: 41px;
+        min-height: 38px;
         font-size: 13px;
     }
 
     .search-footer {
         gap: 6px;
-        margin-top: 8px;
+        margin-top: 6px;
     }
 
     .search-footer > span {
@@ -551,7 +560,7 @@
     }
 
     .search-footer button {
-        padding: 5px 9px;
+        padding: 4px 9px;
         font-size: 10px;
     }
 }
@@ -584,11 +593,12 @@
     }
 
     .search-tabs {
-        gap: 13px;
+        gap: 2px;
     }
 
     .search-tab {
-        font-size: 11px;
+        font-size: 10px;
+        padding: 8px 4px 6px;
     }
 }
 

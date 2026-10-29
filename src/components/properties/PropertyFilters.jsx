@@ -29,6 +29,7 @@ const bhkOptions = [
 const propertyTypes = [
     { label: "All Types", value: "all" },
     { label: "Apartment", value: "Apartment" },
+    { label: "Commercial", value: "Commercial" },
     { label: "Plot / Land", value: "Plot" },
 ];
 
